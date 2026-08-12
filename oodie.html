@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Oodie Playbook for India — Bangalore Sourcing Initiative</title>
+<meta name="description" content="Sourcing an oversized-comfort product line from Bangalore: routes, suppliers, landed costs and launch plan.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#FBF7F1; --card:#FFFFFF; --ink:#2B2320; --mute:#7C6F66; --line:#E8DFD3;
+  --terra:#B85042; --terra-dk:#93392E; --sand:#EFE9DC;
+  --china:#3E5C76; --china-soft:#E7EDF3;
+  --india:#5F8468; --india-soft:#E9F0EA;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font-family:'Inter',system-ui,sans-serif;font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{color:inherit}
+.mono{font-family:'IBM Plex Mono',monospace}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+
+/* ---------- nav ---------- */
+nav{position:sticky;top:0;z-index:50;background:rgba(251,247,241,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.nav-in{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 20px;max-width:1120px;margin:0 auto}
+.brand{font-family:'Fraunces',serif;font-weight:700;font-size:17px;letter-spacing:-.01em;white-space:nowrap}
+.brand span{color:var(--terra)}
+.nav-links{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none}
+.nav-links::-webkit-scrollbar{display:none}
+.nav-links a{text-decoration:none;font-size:13px;font-weight:600;color:var(--mute);padding:7px 12px;border-radius:99px;white-space:nowrap}
+.nav-links a:hover,.nav-links a:focus-visible{color:var(--ink);background:var(--sand)}
+
+/* ---------- hero ---------- */
+header{padding:56px 0 40px;border-bottom:1px solid var(--line)}
+.eyebrow{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--terra);margin-bottom:14px}
+h1{font-family:'Fraunces',serif;font-weight:700;font-size:clamp(34px,6vw,58px);line-height:1.05;letter-spacing:-.02em;max-width:15ch}
+.lede{margin-top:18px;max-width:60ch;color:var(--mute);font-size:17px}
+.lede b{color:var(--ink)}
+.hero-cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+.ticker{margin-top:34px;display:flex;flex-wrap:wrap;gap:0;border:1px solid var(--line);border-radius:10px;overflow:hidden;background:var(--card)}
+.tick{flex:1 1 160px;padding:14px 18px;border-right:1px solid var(--line)}
+.tick:last-child{border-right:0}
+.tick .v{font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:19px}
+.tick .k{font-size:12px;color:var(--mute);margin-top:2px}
+
+/* ---------- buttons ---------- */
+.btn{display:inline-flex;align-items:center;gap:7px;text-decoration:none;font-weight:600;font-size:13.5px;padding:10px 16px;border-radius:8px;border:1.5px solid transparent;cursor:pointer;transition:transform .12s ease, box-shadow .12s ease}
+.btn:hover{transform:translateY(-1px)}
+.btn:focus-visible{outline:3px solid rgba(184,80,66,.4);outline-offset:2px}
+.btn-solid{background:var(--terra);color:#fff}
+.btn-solid:hover{background:var(--terra-dk)}
+.btn-ghost{border-color:var(--line);background:var(--card);color:var(--ink)}
+.btn-ghost:hover{border-color:var(--ink)}
+.btn-sm{padding:7px 12px;font-size:12.5px;border-radius:7px}
+.ext::after{content:"↗";font-size:.85em;opacity:.7}
+
+/* ---------- sections ---------- */
+section{padding:56px 0;border-bottom:1px solid var(--line)}
+.sec-head{margin-bottom:28px}
+.sec-eyebrow{font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--mute)}
+h2{font-family:'Fraunces',serif;font-weight:700;font-size:clamp(26px,4vw,36px);letter-spacing:-.015em;margin-top:6px}
+.sec-sub{color:var(--mute);margin-top:8px;max-width:64ch}
+h3{font-family:'Fraunces',serif;font-weight:600;font-size:20px;letter-spacing:-.01em}
+
+/* ---------- routes ---------- */
+.routes{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.route{background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;display:flex;flex-direction:column}
+.route-head{padding:20px 22px 16px;color:#fff}
+.route-a .route-head{background:var(--china)}
+.route-b .route-head{background:var(--india)}
+.route-tag{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;opacity:.85}
+.route-head h3{color:#fff;font-size:23px;margin-top:4px}
+.route-meta{font-family:'IBM Plex Mono',monospace;font-size:12px;margin-top:10px;opacity:.92;display:flex;flex-wrap:wrap;gap:6px 16px}
+.route-body{padding:18px 22px 22px;display:flex;flex-direction:column;gap:14px;flex:1}
+.route-note{font-size:14px;color:var(--mute)}
+.sup{border:1px solid var(--line);border-radius:10px;padding:13px 15px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.route-a .sup{background:var(--china-soft)}
+.route-b .sup{background:var(--india-soft)}
+.sup .nm{font-weight:700;font-size:14.5px}
+.sup .dt{font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--mute);margin-top:2px}
+.shelf-links{display:flex;flex-wrap:wrap;gap:8px;margin-top:4px}
+.btns{display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end}
+.cmp td .mono{font-size:12.5px}
+.cmp a.tel{text-decoration:none;font-weight:600;color:var(--terra);white-space:nowrap}
+.callout{background:var(--sand);border-radius:10px;padding:14px 16px;font-size:13.5px}
+.callout b{font-weight:700}
+
+/* ---------- shelves ---------- */
+.shelf{margin-top:34px}
+.shelf-head{display:flex;align-items:baseline;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.shelf-head .hint{font-size:12.5px;color:var(--mute)}
+.rail{display:grid;grid-auto-flow:column;grid-auto-columns:230px;gap:14px;overflow-x:auto;padding:4px 4px 14px;scroll-snap-type:x mandatory}
+.rail::-webkit-scrollbar{height:8px}
+.rail::-webkit-scrollbar-thumb{background:var(--line);border-radius:99px}
+.pcard{scroll-snap-align:start;text-decoration:none;background:var(--card);border:1px solid var(--line);border-radius:12px;overflow:hidden;display:flex;flex-direction:column;transition:transform .12s ease, box-shadow .12s ease}
+.pcard:hover{transform:translateY(-2px);box-shadow:0 8px 22px rgba(43,35,32,.08)}
+.pimg{aspect-ratio:4/5;background:var(--sand);position:relative;overflow:hidden}
+.pimg img{width:100%;height:100%;object-fit:cover}
+.pimg.noimg img{display:none}
+.pimg.noimg::after{content:attr(data-name);position:absolute;inset:0;display:flex;align-items:center;justify-content:center;padding:16px;text-align:center;font-family:'Fraunces',serif;font-weight:600;font-size:15px;color:var(--mute)}
+.badge{position:absolute;top:10px;left:10px;font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.08em;background:rgba(43,35,32,.82);color:#fff;padding:4px 8px;border-radius:6px}
+.pbody{padding:12px 14px 14px;display:flex;flex-direction:column;gap:8px;flex:1}
+.pname{font-weight:600;font-size:13.5px;line-height:1.35;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.pprice{font-family:'IBM Plex Mono',monospace;font-size:14px;font-weight:600}
+.pprice s{color:var(--mute);font-weight:400;font-size:12px;margin-left:6px}
+.pbody .btn{margin-top:auto;justify-content:center}
+.img-note{font-size:12px;color:var(--mute);margin-top:6px}
+
+/* ---------- math ---------- */
+.math-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;align-items:start}
+.slip{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px}
+.slip h3{margin-bottom:4px}
+.slip .sub{font-size:13px;color:var(--mute);margin-bottom:16px}
+.ledger{width:100%;border-collapse:collapse;font-family:'IBM Plex Mono',monospace;font-size:13.5px}
+.ledger td{padding:9px 2px;border-bottom:1px dashed var(--line)}
+.ledger td:last-child{text-align:right;font-weight:600;white-space:nowrap}
+.ledger tr.sum td{border-bottom:1.5px solid var(--ink);font-weight:600}
+.ledger tr.final td{border-bottom:0;color:var(--terra);font-weight:600;font-size:15px}
+.ledger .lbl{font-family:'Inter',sans-serif;font-weight:500}
+.ledger .lbl small{display:block;color:var(--mute);font-weight:400;font-size:11.5px}
+.calc label{display:block;font-size:12px;font-weight:600;color:var(--mute);margin-bottom:4px}
+.calc-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.calc input{width:100%;font-family:'IBM Plex Mono',monospace;font-size:15px;padding:9px 11px;border:1.5px solid var(--line);border-radius:8px;background:var(--paper);color:var(--ink)}
+.calc input:focus{outline:none;border-color:var(--terra)}
+.calc-out{margin-top:16px;background:var(--sand);border-radius:10px;padding:14px 16px;display:grid;grid-template-columns:1fr 1fr;gap:10px 16px}
+.co .v{font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:17px}
+.co .v.hot{color:var(--terra)}
+.co .k{font-size:11.5px;color:var(--mute)}
+.fine{font-size:12px;color:var(--mute);margin-top:12px}
+
+/* ---------- compare + phases ---------- */
+.cmp{width:100%;border-collapse:collapse;background:var(--card);border:1px solid var(--line);border-radius:12px;overflow:hidden;font-size:14px}
+.cmp th,.cmp td{padding:13px 16px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+.cmp thead th{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:#fff}
+.cmp thead th:first-child{background:var(--ink)}
+.cmp thead th.ca{background:var(--china)}
+.cmp thead th.cb{background:var(--india)}
+.cmp tbody tr:last-child td{border-bottom:0}
+.cmp td:first-child{font-weight:600;width:24%}
+.verdict{margin-top:16px;background:var(--india-soft);border:1px solid var(--india);border-radius:10px;padding:14px 18px;font-size:14.5px}
+.phases{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:26px}
+.phase{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px;display:flex;flex-direction:column;gap:10px}
+.phase.hot{background:var(--terra);border-color:var(--terra);color:#fff}
+.phase .ph{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;color:var(--mute)}
+.phase.hot .ph{color:var(--sand)}
+.phase .amt{font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:26px;color:var(--terra)}
+.phase.hot .amt{color:#fff}
+.phase ul{list-style:none;display:flex;flex-direction:column;gap:7px;font-size:13.5px}
+.phase li{padding-left:16px;position:relative}
+.phase li::before{content:"·";position:absolute;left:2px;font-weight:700}
+.phase.hot li{color:var(--sand)}
+
+/* ---------- ops ---------- */
+.ops{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.ops .slip ul{list-style:none;display:flex;flex-direction:column;gap:10px;font-size:14px}
+.ops .slip li{padding-left:20px;position:relative}
+.ops .slip li::before{content:"—";position:absolute;left:0;color:var(--terra);font-weight:600}
+.risks{display:grid;gap:12px;margin-top:26px}
+.risk{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 18px;display:grid;grid-template-columns:150px 1fr 1.2fr;gap:16px;align-items:start;font-size:13.5px}
+.risk .rn{font-family:'Fraunces',serif;font-weight:600;font-size:16px;color:var(--terra)}
+.risk .mit b{color:var(--india)}
+
+/* ---------- footer ---------- */
+footer{padding:56px 0 64px}
+.next{background:var(--ink);color:#fff;border-radius:16px;padding:34px 30px}
+.next h2{color:#fff}
+.next ol{margin:18px 0 24px;padding-left:0;list-style:none;display:flex;flex-direction:column;gap:12px;font-size:15px;max-width:70ch}
+.next li{display:flex;gap:14px;align-items:baseline}
+.next .n{font-family:'IBM Plex Mono',monospace;color:var(--sand);background:rgba(255,255,255,.12);border-radius:6px;padding:2px 8px;font-size:12.5px;flex-shrink:0}
+.next .muted{color:rgba(255,255,255,.65)}
+.credit{margin-top:22px;font-size:12px;color:var(--mute);text-align:center}
+
+/* ---------- reveal ---------- */
+.rv{opacity:0;transform:translateY(12px);transition:opacity .5s ease, transform .5s ease}
+.rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion: reduce){
+  .rv{opacity:1;transform:none;transition:none}
+  .btn,.pcard{transition:none}
+  html{scroll-behavior:auto}
+}
+
+/* ---------- responsive ---------- */
+@media (max-width:880px){
+  .routes,.math-grid,.ops{grid-template-columns:1fr}
+  .phases{grid-template-columns:1fr}
+  .risk{grid-template-columns:1fr}
+  .rail{grid-auto-columns:200px}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-in">
+    <div class="brand"><a href="index.html" style="text-decoration:none">← The <span>Sourcing</span> Engine</a></div>
+    <div class="nav-links">
+      <a href="#routes">Routes</a>
+      <a href="#market">Market</a>
+      <a href="#math">The math</a>
+      <a href="#plan">Plan</a>
+      <a href="#risks">Risks</a>
+    </div>
+  </div>
+</nav>
+
+<header>
+  <div class="wrap">
+    <div class="eyebrow">Project · Sourcing Feasibility · Aug 2026</div>
+    <h1>The Oodie playbook, sourced for India</h1>
+    <p class="lede">One hero product — the oversized <b>sherpa wearable blanket</b> — proven in the West, already retailing at ₹1,595–2,495 in India, and available at a fraction of that from factories in China and wholesale hubs at home. This page maps <b>who to buy from, what it lands at, and how we start from Bangalore.</b></p>
+    <div class="hero-cta">
+      <a class="btn btn-solid" href="#routes">See the sourcing routes</a>
+      <a class="btn btn-ghost" href="#math">Jump to the math</a>
+    </div>
+    <div class="ticker rv">
+      <div class="tick"><div class="v">$4–10</div><div class="k">factory price / pc (FOB China)</div></div>
+      <div class="tick"><div class="v">₹650–950</div><div class="k">landed cost, either route</div></div>
+      <div class="tick"><div class="v">₹1,595–2,495</div><div class="k">current Indian retail band</div></div>
+      <div class="tick"><div class="v">₹25–35K</div><div class="k">to start (sampling phase)</div></div>
+    </div>
+  </div>
+</header>
+
+<!-- ================= ROUTES ================= -->
+<section id="routes">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-eyebrow">01 · Sourcing</div>
+      <h2>Two ways to fill the shelf</h2>
+      <p class="sec-sub">Every button below opens a live listing, storefront or supplier directory — nothing here is hypothetical.</p>
+    </div>
+
+    <div class="routes">
+      <!-- Route A -->
+      <article class="route route-a rv">
+        <div class="route-head">
+          <div class="route-tag">Route A · Import</div>
+          <h3>China, factory-direct</h3>
+          <div class="route-meta"><span>FOB $4–10/pc</span><span>MOQ 1–500</span><span>6–9 wks to Bangalore</span></div>
+        </div>
+        <div class="route-body">
+          <p class="route-note">Deepest cost base and full own-brand customisation (prints, labels, packaging) from ~300–500 pcs. Sampling is cheap — many suppliers sell 1–50 pcs of stock designs. Pay through Trade Assurance escrow.</p>
+
+          <div class="sup"><div><div class="nm">DH Textil · Zhejiang</div><div class="dt">#1 in wearable blankets · ~$18M exports · 12 yrs</div></div><a class="btn btn-ghost btn-sm ext" target="_blank" rel="noopener" href="https://www.alibaba.com/trade/search?tab=supplier&amp;searchText=DH+Textil">Supplier search</a></div>
+          <div class="sup"><div><div class="nm">Hubei Yecheng Household</div><div class="dt">MOQ 5 pcs — ideal for first samples</div></div><a class="btn btn-ghost btn-sm ext" target="_blank" rel="noopener" href="https://www.alibaba.com/trade/search?tab=all&amp;searchText=hoodie+blanket">Search listings</a></div>
+          <div class="sup"><div><div class="nm">Hangzhou Sine Textile</div><div class="dt">MOQ 10 · 6,400+ pcs sold</div></div><a class="btn btn-ghost btn-sm ext" target="_blank" rel="noopener" href="https://www.alibaba.com/trade/search?tab=all&amp;searchText=hoodie+blanket">Search listings</a></div>
+          <div class="sup"><div><div class="nm">TNE Blankets · Nantong</div><div class="dt">Full-custom factory · MOQ 200 (trial 100) · +86 188 6894 4843</div></div><div class="btns"><a class="btn btn-ghost btn-sm" href="tel:+8618868944843">Call</a><a class="btn btn-ghost btn-sm ext" target="_blank" rel="noopener" href="https://www.blanket-manufacturer.com/contact-us/">Get a quote</a></div></div>
+
+          <div class="callout"><b>Fastest activation:</b> post one RFQ on Alibaba and let suppliers come to us with quotes — inbound, not outbound.</div>
+          <div class="shelf-links">
+            <a class="btn btn-solid btn-sm ext" target="_blank" rel="noopener" href="https://sourcing.alibaba.com/">Post an RFQ</a>
+            <a class="btn btn-ghost btn-sm ext" target="_blank" rel="noopener" href="https://www.alibaba.com/trade/search?tab=all&amp;searchText=hoodie+blanket">Alibaba · search</a>
+            <a class="btn btn-ghost btn-sm ext" target="_blank" rel="noopener" href="https://www.alibaba.com/trade/search?tab=all&amp;searchText=sherpa+hooded+blanket">Alibaba · sherpa</a>
+            <a class="btn btn-ghost btn-sm ext" target="_blank" rel="noopener" href="https://www.made-in-china.com/products-search/hot-china-products/Wearable_Blanket.html">Made-in-China</a>
+            <a class="btn btn-ghost btn-sm ext" target="_blank" rel="noopener" href="https://www.made-in-china.com/products-search/hot-china-products/Hoodie_Blanket.html">Made-in-China · hoodies</a>
+            <a class="btn btn-ghost btn-sm ext" target="_blank" rel="noopener" href="https://www.alibaba.com/trade/search?tab=all&amp;searchText=sherpa+hooded+robe">Robes line</a>
+            <a class="btn btn-ghost btn-sm ext" target="_blank" rel="noopener" href="https://www.made-in-china.com/products-search/hot-china-products/Weighted_Blanket.html">Weighted blankets</a>
+          </div>
+          <p class="note" style="font-size:11.5px;color:var(--mute);margin-top:2px">Marketplace links verified 11 Aug 2026. Alibaba retired its old keyword pages — these point at its live search, so results stay current.</p>
+        </div>
+      </article>
+
+      <!-- Route B -->
+      <article class="route route-b rv">
+        <div class="route-head">
+          <div class="route-tag">Route B · Domestic</div>
+          <h3>India, ready wholesale</h3>
+          <div class="route-meta"><span>₹650–1,950/pc</span><span>MOQ ~10–100</span><span>3–5 days to Bangalore</span></div>
+        </div>
+        <div class="route-body">
+          <p class="route-note">The product already exists in Indian wholesale — no customs, no forex, reorders in days. Ideal for a fast market test before any big cheque. IndiaMART sellers publish direct phone numbers.</p>
+
+          <div class="sup"><div><div class="nm">Kumbhkaran Comfort LLP · Mumbai</div><div class="dt">LAMA sherpa + microfibre, one-size · +91 80478 22106 · 9251</div></div><div class="btns"><a class="btn btn-ghost btn-sm" href="tel:+918047822106">Call</a><a class="btn btn-ghost btn-sm ext" target="_blank" rel="noopener" href="https://www.indiamart.com/kumbhkaran-comfort-llp/mens-hoodies.html">Listing</a></div></div>
+          <div class="sup"><div><div class="nm">Pie Prints · Hyderabad</div><div class="dt">Blanket hoodie ₹1,950 · custom prints from ₹652 · +91 80476 97880</div></div><div class="btns"><a class="btn btn-ghost btn-sm" href="tel:+918047697880">Call</a><a class="btn btn-ghost btn-sm ext" target="_blank" rel="noopener" href="https://www.indiamart.com/proddetail/oversized-blanket-hoodie-2852586244873.html">Listing</a></div></div>
+          <div class="sup"><div><div class="nm">The Guru Shop · Surat</div><div class="dt">Wearable hoodie blanket at ₹650/pc wholesale</div></div><a class="btn btn-ghost btn-sm ext" target="_blank" rel="noopener" href="https://dir.indiamart.com/impcat/hooded-sweatshirts.html">Find on IndiaMART</a></div>
+          <div class="sup"><div><div class="nm">Ludhiana + Tirupur clusters</div><div class="dt">Own-brand manufacture at volume · direct phone contacts</div></div><a class="btn btn-ghost btn-sm ext" target="_blank" rel="noopener" href="https://dir.indiamart.com/impcat/winter-hoodies.html">Directory</a></div>
+
+          <div class="callout"><b>Worth noting:</b> The Switchover — India's visible D2C leader in this category — ships from Ludhiana 141015. The winning Indian brand already sits inside the same knit cluster we would manufacture in.</div>
+          <div class="shelf-links">
+            <a class="btn btn-solid btn-sm ext" target="_blank" rel="noopener" href="https://dir.indiamart.com/impcat/man-hoodies.html">Browse IndiaMART suppliers</a>
+          </div>
+        </div>
+      </article>
+    </div>
+
+    <div class="shelf" style="margin-top:30px">
+      <div class="shelf-head"><h3>Supplier contact sheet</h3><span class="hint">Numbers as published on supplier sites / IndiaMART call-connect, Aug 2026 — verify on first call</span></div>
+      <table class="cmp">
+        <thead><tr><th>Supplier</th><th class="ca">Where · what</th><th class="cb">Contact</th></tr></thead>
+        <tbody>
+          <tr><td>TNE Blankets (factory)</td><td>Nantong, China · custom fleece / sherpa / weighted, MOQ 200 (trial 100)</td><td><a class="tel" href="tel:+8618868944843">+86 188 6894 4843</a> · <a target="_blank" rel="noopener" href="https://www.blanket-manufacturer.com/contact-us/">quote form ↗</a></td></tr>
+          <tr><td>DH Textil (factory)</td><td>Zhejiang, China · #1 wearable blankets, ~$18M exports</td><td>Message via <a target="_blank" rel="noopener" href="https://www.alibaba.com/trade/search?tab=supplier&amp;searchText=DH+Textil">Alibaba storefront ↗</a> (buyer login)</td></tr>
+          <tr><td>Hubei Yecheng · Hangzhou Sine · Nanjing Olive</td><td>China · stock hoodie blankets, MOQ 5–50</td><td>Message via <a target="_blank" rel="noopener" href="https://www.alibaba.com/trade/search?tab=all&amp;searchText=hoodie+blanket">Alibaba listings ↗</a> or one <a target="_blank" rel="noopener" href="https://sourcing.alibaba.com/">RFQ ↗</a></td></tr>
+          <tr><td>Kumbhkaran Comfort LLP (LAMA)</td><td>Mumbai · ready wearable blankets, 3–5 day pan-India</td><td><a class="tel" href="tel:+918047822106">+91 80478 22106</a> · 9251</td></tr>
+          <tr><td>Pie Prints</td><td>Hyderabad · blanket hoodie ₹1,950; custom prints ₹652</td><td><a class="tel" href="tel:+918047697880">+91 80476 97880</a></td></tr>
+          <tr><td>Anmol Knitwears</td><td>Ludhiana cluster · bulk winter hoodies / knitwear</td><td><a class="tel" href="tel:+918047634968">+91 80476 34968</a></td></tr>
+          <tr><td>Koverify</td><td>India · top-rated bulk hoodie supplier on IndiaMART</td><td><a class="tel" href="tel:+917942836505">+91 79428 36505</a></td></tr>
+          <tr><td>Panchakshar Corporation</td><td>India · winter hoodies, bulk orders</td><td><a class="tel" href="tel:+918047793210">+91 80477 93210</a></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ================= MARKET ================= -->
+<section id="market">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-eyebrow">02 · Proof on the shelf</div>
+      <h2>What's already selling — real listings, real prices</h2>
+      <p class="sec-sub">Tap any card to open the live product page. Photos belong to the linked brands and sellers; shown here for internal research.</p>
+    </div>
+
+    <!-- Shelf: West -->
+    <div class="shelf rv">
+      <div class="shelf-head"><h3>The original — The Oodie (AU / US)</h3><span class="hint">8M+ originals sold · licensed collabs drive the line</span></div>
+      <div class="rail">
+        <a class="pcard" target="_blank" rel="noopener" href="https://theoodie.com/products/pusheen-sherpa-blanket-licensed">
+          <div class="pimg" data-name="Pusheen Sherpa Blanket"><span class="badge">WEST · D2C</span><img loading="lazy" alt="Pusheen sherpa blanket by The Oodie" src="https://theoodie.com/cdn/shop/files/Pusheen_PDP_Blanket_1500x1500px.jpg?v=1784008078&width=420"></div>
+          <div class="pbody"><div class="pname">Pusheen Sherpa Blanket · Licensed</div><div class="pprice">From $95</div><span class="btn btn-ghost btn-sm ext">Open product page</span></div>
+        </a>
+        <a class="pcard" target="_blank" rel="noopener" href="https://theoodie.com/products/harry-potter-hufflepuff-sherpa-blanket-licensed">
+          <div class="pimg" data-name="Harry Potter Sherpa Blanket"><span class="badge">WEST · D2C</span><img loading="lazy" alt="Harry Potter Hufflepuff sherpa blanket by The Oodie" src="https://theoodie.com/cdn/shop/files/The-Oodie-May_SHOOT2_Look20_HPHUFFLEPUFFBLANKET_2465.jpg?v=1783386376&width=420"></div>
+          <div class="pbody"><div class="pname">Harry Potter Hufflepuff Sherpa Blanket</div><div class="pprice">From $95</div><span class="btn btn-ghost btn-sm ext">Open product page</span></div>
+        </a>
+        <a class="pcard" target="_blank" rel="noopener" href="https://theoodie.com/products/harry-potter-hedwig-sherpa-dressing-gown-licensed">
+          <div class="pimg" data-name="Hedwig Sherpa Dressing Gown"><span class="badge">WEST · D2C</span><img loading="lazy" alt="Harry Potter Hedwig sherpa dressing gown by The Oodie" src="https://theoodie.com/cdn/shop/files/The-Oodie-May_SHOOT2_Look15_HPHEDWIGROBESM_1875.jpg?v=1783386433&width=420"></div>
+          <div class="pbody"><div class="pname">Hedwig Sherpa Dressing Gown · line extension</div><div class="pprice">$119</div><span class="btn btn-ghost btn-sm ext">Open product page</span></div>
+        </a>
+        <a class="pcard" target="_blank" rel="noopener" href="https://theoodie.com/collections/oodies">
+          <div class="pimg" data-name="Oodie Originals — full range"><span class="badge">WEST · D2C</span><img loading="lazy" alt="The Oodie originals collection" src="https://theoodie.com/cdn/shop/files/Social_Sharing_Image_Preview.png?v=1739850051"></div>
+          <div class="pbody"><div class="pname">Oodie™ Originals — the full hero range</div><div class="pprice">Collection</div><span class="btn btn-ghost btn-sm ext">Browse collection</span></div>
+        </a>
+      </div>
+    </div>
+
+    <!-- Shelf: India D2C -->
+    <div class="shelf rv">
+      <div class="shelf-head"><h3>India D2C today — The Switchover (Ludhiana)</h3><span class="hint">Our price-band benchmark · mostly solids, thin on prints</span></div>
+      <div class="rail">
+        <a class="pcard" target="_blank" rel="noopener" href="https://theswitchover.com/products/wearable-sherpa-blanket-hoodies-for-women-men-and-children-thick-warm-oversized-hoodie-blanket-with-large-front-pockets">
+          <div class="pimg" data-name="Black Solid Blanket Hoodie"><span class="badge">INDIA · D2C</span><img loading="lazy" alt="Black solid wearable sherpa blanket hoodie by The Switchover" src="https://theswitchover.com/cdn/shop/files/1.jpg?crop=center&height=1295&v=1731344754&width=1036"></div>
+          <div class="pbody"><div class="pname">Black Solid Sherpa Blanket Hoodie</div><div class="pprice">₹2,495 <s>₹4,000</s></div><span class="btn btn-ghost btn-sm ext">Open product page</span></div>
+        </a>
+        <a class="pcard" target="_blank" rel="noopener" href="https://theswitchover.com/products/cozy-cat-printed-wearable-sherpa-unisex-blanket-hoodie">
+          <div class="pimg" data-name="Cozy Cat Printed Blanket Hoodie"><span class="badge">INDIA · D2C</span><img loading="lazy" alt="Cozy cat printed wearable sherpa blanket hoodie by The Switchover" src="https://theswitchover.com/cdn/shop/files/3_4bea7f9f-087a-44e7-8ae9-c15d198775f1.jpg?crop=center&height=1451&v=1737203617&width=1036"></div>
+          <div class="pbody"><div class="pname">Cozy Cat Printed Blanket Hoodie</div><div class="pprice">₹2,995 <s>₹4,000</s></div><span class="btn btn-ghost btn-sm ext">Open product page</span></div>
+        </a>
+        <a class="pcard" target="_blank" rel="noopener" href="https://theswitchover.com/products/wearable-sherpa-blanket-hoodies-for-women-men-and-children-thick-warm-oversized-hoodie-blanket-with-large-front-pockets-7">
+          <div class="pimg" data-name="Boba Tea Printed Blanket Hoodie"><span class="badge">INDIA · D2C</span><img loading="lazy" alt="Boba tea printed wearable sherpa blanket hoodie by The Switchover" src="https://theswitchover.com/cdn/shop/files/3_1_a081e3d9-b37c-4cea-879c-941799850323.jpg?crop=center&height=1295&v=1731343177&width=1036"></div>
+          <div class="pbody"><div class="pname">Boba Tea Printed Blanket Hoodie</div><div class="pprice">₹2,495 <s>₹4,000</s></div><span class="btn btn-ghost btn-sm ext">Open product page</span></div>
+        </a>
+        <a class="pcard" target="_blank" rel="noopener" href="https://theswitchover.com/products/extra-long-wearable-sherpa-blanket-hoodies-thick-warm-oversized-hoodie-blanket-with-large-front-pockets-2">
+          <div class="pimg" data-name="Navy Extra Long Blanket Hoodie"><span class="badge">INDIA · D2C</span><img loading="lazy" alt="Navy blue extra long wearable sherpa blanket hoodie by The Switchover" src="https://theswitchover.com/cdn/shop/files/1_4dd71307-1caf-4774-bbea-0f06eb382cda.jpg?crop=center&height=1295&v=1731340772&width=1036"></div>
+          <div class="pbody"><div class="pname">Navy Extra Long Blanket Hoodie</div><div class="pprice">₹3,495 <s>₹5,000</s></div><span class="btn btn-ghost btn-sm ext">Open product page</span></div>
+        </a>
+        <a class="pcard" target="_blank" rel="noopener" href="https://theswitchover.com/products/wearable-sherpa-blanket-hoodies-for-children-thick-warm-oversized-hoodie-blanket-with-large-front-pockets-copy">
+          <div class="pimg" data-name="Kids Pink Blanket Hoodie"><span class="badge">INDIA · D2C</span><img loading="lazy" alt="Pink kids wearable sherpa blanket hoodie by The Switchover" src="https://theswitchover.com/cdn/shop/files/2_1_1.jpg?crop=center&height=1451&v=1764006914&width=1036"></div>
+          <div class="pbody"><div class="pname">Kids Pink Blanket Hoodie</div><div class="pprice">₹2,095 <s>₹2,995</s></div><span class="btn btn-ghost btn-sm ext">Open product page</span></div>
+        </a>
+      </div>
+    </div>
+
+    <!-- Shelf: Sourcing listings -->
+    <div class="shelf rv">
+      <div class="shelf-head"><h3>On the sourcing side — live wholesale listings</h3><span class="hint">What the same product costs before a brand touches it</span></div>
+      <div class="rail">
+        <a class="pcard" target="_blank" rel="noopener" href="https://www.indiamart.com/proddetail/oversized-blanket-hoodie-2852586244873.html">
+          <div class="pimg" data-name="Fleece Oversized Blanket Hoodie"><span class="badge">INDIAMART</span><img loading="lazy" alt="Fleece oversized blanket hoodie wholesale listing on IndiaMART" src="https://5.imimg.com/data5/SELLER/Default/2023/10/349098646/ZH/SO/MJ/29902153/71-na3e3ukl-ac-uf894-1000-ql80-500x500.jpg"></div>
+          <div class="pbody"><div class="pname">Fleece Oversized Blanket Hoodie · Pie Prints, Hyderabad</div><div class="pprice">₹1,950 / pc</div><span class="btn btn-ghost btn-sm ext">Open listing</span></div>
+        </a>
+        <a class="pcard" target="_blank" rel="noopener" href="https://m.indiamart.com/proddetail/custom-printed-hoodies-2849604204533.html">
+          <div class="pimg" data-name="Custom Printed Hoodies"><span class="badge">INDIAMART</span><img loading="lazy" alt="Custom printed hoodies wholesale listing on IndiaMART" src="https://5.imimg.com/data5/SELLER/Default/2024/12/475413111/TP/KL/GI/29902153/custom-printed-hoodies-250x250.jpg"></div>
+          <div class="pbody"><div class="pname">Custom Printed Hoodies · Verified Exporter</div><div class="pprice">₹652 / pc</div><span class="btn btn-ghost btn-sm ext">Open listing</span></div>
+        </a>
+        <a class="pcard" target="_blank" rel="noopener" href="https://www.alibaba.com/trade/search?tab=all&amp;searchText=sherpa+hoodie+blanket">
+          <div class="pimg noimg" data-name="Sherpa hoodie blankets · $6.84–9.89 FOB"><span class="badge">ALIBABA</span><img alt="" src=""></div>
+          <div class="pbody"><div class="pname">Factory sherpa hoodie blankets — giant pocket, custom prints</div><div class="pprice">$6.84–9.89 FOB</div><span class="btn btn-ghost btn-sm ext">Open supplier list</span></div>
+        </a>
+        <a class="pcard" target="_blank" rel="noopener" href="https://www.alibaba.com/trade/search?tab=supplier&amp;searchText=DH+Textil">
+          <div class="pimg noimg" data-name="DH Textil · #1 wearable blankets"><span class="badge">ALIBABA</span><img alt="" src=""></div>
+          <div class="pbody"><div class="pname">DH Textil storefront — the #1 wearable-blanket factory</div><div class="pprice">~$18M exports</div><span class="btn btn-ghost btn-sm ext">Open storefront</span></div>
+        </a>
+      </div>
+      <p class="img-note">Alibaba gates product photos and direct contacts behind a free buyer login — storefronts above open publicly; quotes come via platform messages or an RFQ.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= MATH ================= -->
+<section id="math">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-eyebrow">03 · Cost &amp; calculations</div>
+      <h2>What a piece really lands at</h2>
+      <p class="sec-sub">Left: the worked example behind our numbers. Right: change any input and the bill of entry recalculates.</p>
+    </div>
+
+    <div class="math-grid">
+      <div class="slip rv">
+        <h3>Worked example — China, $7 FOB</h3>
+        <div class="sub">HSN 6301 (blankets) · sea freight · ₹95 / USD</div>
+        <table class="ledger">
+          <tr><td class="lbl">Factory price (FOB $7.00)</td><td>₹665</td></tr>
+          <tr><td class="lbl">Sea freight + insurance <small>estimate at ~500 pcs</small></td><td>₹60</td></tr>
+          <tr class="sum"><td class="lbl">CIF value at port</td><td>₹725</td></tr>
+          <tr><td class="lbl">Duties + taxes <small>BCD · AIDC · SWS · IGST — indicative ~32% of CIF</small></td><td>≈ ₹235</td></tr>
+          <tr class="sum"><td class="lbl">Landed cost</td><td>≈ ₹960</td></tr>
+          <tr><td class="lbl">Less IGST input credit <small>GST-registered importer</small></td><td>− ₹130</td></tr>
+          <tr class="final"><td class="lbl">Effective landed cost</td><td>≈ ₹830</td></tr>
+        </table>
+        <p class="fine">India domestic lands at ₹650–900 delivered with creditable GST — the two routes converge on cost, so customisation and scale decide, not price alone. A wearable blanket could also be classified as knitted apparel (Ch. 61, higher duty) — we confirm the HS code with a customs broker before the first shipment.</p>
+      </div>
+
+      <div class="slip calc rv">
+        <h3>Landed-cost calculator</h3>
+        <div class="sub">Bill of entry, live — edit any field</div>
+        <div class="calc-grid">
+          <div><label for="fob">FOB price ($ / pc)</label><input id="fob" type="number" step="0.1" value="7" inputmode="decimal"></div>
+          <div><label for="qty">Order quantity (pcs)</label><input id="qty" type="number" step="10" value="500" inputmode="numeric"></div>
+          <div><label for="frt">Freight (₹ / pc)</label><input id="frt" type="number" step="5" value="60" inputmode="numeric"></div>
+          <div><label for="duty">Duty + tax (% of CIF)</label><input id="duty" type="number" step="1" value="32" inputmode="numeric"></div>
+          <div><label for="itc">IGST credit back (₹ / pc)</label><input id="itc" type="number" step="5" value="130" inputmode="numeric"></div>
+          <div><label for="mrp">Planned retail (₹)</label><input id="mrp" type="number" step="50" value="1599" inputmode="numeric"></div>
+        </div>
+        <div class="calc-out">
+          <div class="co"><div class="v" id="o-landed">—</div><div class="k">landed / pc</div></div>
+          <div class="co"><div class="v" id="o-eff">—</div><div class="k">effective / pc (post-ITC)</div></div>
+          <div class="co"><div class="v hot" id="o-margin">—</div><div class="k">gross margin at retail</div></div>
+          <div class="co"><div class="v" id="o-cash">—</div><div class="k">cash needed for the order</div></div>
+        </div>
+        <p class="fine">FX ₹95 / USD. Indicative — final duty depends on HS classification and valuation at clearance.</p>
+      </div>
+    </div>
+
+    <table class="cmp rv" style="margin-top:26px">
+      <thead><tr><th>At a glance</th><th class="ca">Route A · China</th><th class="cb">Route B · India</th></tr></thead>
+      <tbody>
+        <tr><td>Unit cost (hero, ~500 pcs)</td><td>≈ ₹830–960 landed (₹830 effective post-ITC)</td><td>≈ ₹650–900 delivered</td></tr>
+        <tr><td>Minimum sensible order</td><td>Samples 1–50 pcs · custom from 300–500</td><td>From ~10–100 pcs ready stock</td></tr>
+        <tr><td>Speed to stock</td><td>6–9 weeks</td><td>3–5 days</td></tr>
+        <tr><td>Customisation &amp; brand</td><td>Full OEM — prints, labels, packaging, fabric spec</td><td>Limited on ready stock; possible via Ludhiana / Tirupur at volume</td></tr>
+        <tr><td>Working-capital risk</td><td>Higher — cash locked 2+ months</td><td>Low — small cheques, fast cycles</td></tr>
+      </tbody>
+    </table>
+    <div class="verdict rv"><b>Verdict:</b> test the market now on India ready stock; move hero SKUs to China custom production once a print sells 300+ pieces.</div>
+  </div>
+</section>
+
+<!-- ================= PLAN ================= -->
+<section id="plan">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-eyebrow">04 · Investment &amp; activation</div>
+      <h2>Three gates — each one optional</h2>
+      <p class="sec-sub">Every phase is a go / no-go decision. Nothing is committed beyond the phase in front of us.</p>
+    </div>
+
+    <div class="phases">
+      <div class="phase rv">
+        <div class="ph">PHASE 0 · 2–3 WEEKS</div><h3>Sampling</h3><div class="amt">₹25–35K</div>
+        <ul><li>6–10 pcs from 2 India + 2 China suppliers</li><li>Air courier for China samples</li><li>Score fabric GSM, stitching, wash test</li></ul>
+      </div>
+      <div class="phase rv">
+        <div class="ph">PHASE 1 · 4–6 WEEKS</div><h3>Market test</h3><div class="amt">₹1–1.2L</div>
+        <ul><li>100 pcs India ready stock (~₹700 avg)</li><li>Shoot, pack, list — Instagram + marketplace</li><li>Sell at ₹1,499–1,799 · proves demand before big cheques</li></ul>
+      </div>
+      <div class="phase hot rv">
+        <div class="ph">PHASE 2 · SEASON RUN</div><h3>Brand run</h3><div class="amt">₹4.5–5L</div>
+        <ul><li>500 pcs custom China (~$6.5 FOB) — our prints &amp; labels</li><li>Freight + duties in; part comes back as GST credit</li><li>≈ ₹8L revenue potential at ₹1,599 · then extend to robes &amp; weighted blankets</li></ul>
+      </div>
+    </div>
+
+    <div class="ops" style="margin-top:26px">
+      <div class="slip rv">
+        <h3>Reaching suppliers</h3>
+        <div class="sub">How the first conversations happen</div>
+        <ul>
+          <li>IndiaMART — direct phone numbers published; call or WhatsApp the same day.</li>
+          <li>Alibaba RFQ — one posted request brings supplier quotes to us, inbound.</li>
+          <li>Buyer account + Trade Assurance escrow for every China payment.</li>
+          <li>Shortlist rule: verified suppliers, 2+ years, visible transaction history.</li>
+        </ul>
+      </div>
+      <div class="slip rv">
+        <h3>Compliance to import</h3>
+        <div class="sub">Needed once, before the first China shipment</div>
+        <ul>
+          <li>IEC (Import Export Code) — one-time DGFT registration.</li>
+          <li>GST registration — makes IGST at customs claimable as credit.</li>
+          <li>AD code registered with our bank at the port of clearance.</li>
+          <li>Customs broker (CHA) for clearance and HS-code confirmation.</li>
+          <li>None of this is needed for Route B — domestic runs on a normal GST invoice from day one.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= RISKS ================= -->
+<section id="risks">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-eyebrow">05 · Eyes open</div>
+      <h2>Risks, and how we handle them</h2>
+    </div>
+    <div class="risks">
+      <div class="risk rv"><div class="rn">Seasonality</div><div>A warmth product in a warm country.</div><div class="mit"><b>Handle:</b> peak Oct–Feb (north India + hills), AC-home comfort positioning, Diwali–NY gifting; cooling variants exist for summer.</div></div>
+      <div class="risk rv"><div class="rn">HS classification</div><div>Blanket (Ch. 63, ~32% stack) vs knitted apparel (Ch. 61, higher duty) changes landed cost.</div><div class="mit"><b>Handle:</b> pre-confirm with CHA; price Phase 2 at the conservative rate.</div></div>
+      <div class="risk rv"><div class="rn">Quality variance</div><div>Factory photos ≠ delivered goods.</div><div class="mit"><b>Handle:</b> signed golden sample, third-party pre-shipment inspection (~₹10–25K), Trade Assurance escrow.</div></div>
+      <div class="risk rv"><div class="rn">Competition</div><div>Switchover and others already sell at ₹1,595–2,495.</div><div class="mit"><b>Handle:</b> win on prints and drops (their shelf is mostly solids), sharper entry price, faster reorders via Route B.</div></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="next rv">
+      <h2>Next steps</h2>
+      <ol>
+        <li><span class="n">01</span><span>Approve the Phase 0 sample budget (₹25–35K) and the test-market plan.</span></li>
+        <li><span class="n">02</span><span>Run the deep supplier study — 20–30 vetted suppliers across Alibaba, Made-in-China, Global Sources, ThaiTrade and IndiaMART, with MOQs, tiered pricing and contacts.</span></li>
+        <li><span class="n">03</span><span>Order samples from 2 Indian + 2 Chinese suppliers; score and pick partners.</span></li>
+        <li><span class="n">04</span><span>Go / no-go on the 100-pc market test by mid-September — in time for the Oct–Feb season.</span></li>
+      </ol>
+      <span class="muted">Bangalore Sourcing Initiative · prepared by Arfa · August 2026</span>
+    </div>
+    <div class="credit">Prices and listings referenced from theoodie.com, theswitchover.com, IndiaMART, Alibaba, Made-in-China and Global Sources (Aug 2026). Product photos belong to the linked sellers. FX assumed ₹95 / USD; duty figures indicative.</div>
+  </div>
+</footer>
+
+<script>
+// image fallback — swap broken hotlinks for a styled placeholder
+document.querySelectorAll('.pimg img').forEach(function(im){
+  im.addEventListener('error', function(){ im.closest('.pimg').classList.add('noimg'); });
+  if (im.getAttribute('src')==='' ) im.closest('.pimg').classList.add('noimg');
+});
+
+// landed-cost calculator
+(function(){
+  var FX = 95;
+  var $ = function(id){ return document.getElementById(id); };
+  var inr = function(n){ return '₹' + Math.round(n).toLocaleString('en-IN'); };
+  function calc(){
+    var fob = parseFloat($('fob').value)||0, qty = parseFloat($('qty').value)||0,
+        frt = parseFloat($('frt').value)||0, duty = parseFloat($('duty').value)||0,
+        itc = parseFloat($('itc').value)||0, mrp = parseFloat($('mrp').value)||0;
+    var cif = fob*FX + frt;
+    var landed = cif * (1 + duty/100);
+    var eff = Math.max(landed - itc, 0);
+    var margin = mrp>0 ? (mrp - eff)/mrp*100 : 0;
+    $('o-landed').textContent = inr(landed);
+    $('o-eff').textContent = inr(eff);
+    $('o-margin').textContent = margin.toFixed(0) + '%';
+    $('o-cash').textContent = inr(landed*qty);
+  }
+  ['fob','qty','frt','duty','itc','mrp'].forEach(function(id){ $(id).addEventListener('input', calc); });
+  calc();
+})();
+
+// scroll reveal
+(function(){
+  if (!('IntersectionObserver' in window)) { document.querySelectorAll('.rv').forEach(function(el){ el.classList.add('in'); }); return; }
+  var io = new IntersectionObserver(function(es){
+    es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, {threshold:.08});
+  document.querySelectorAll('.rv').forEach(function(el){ io.observe(el); });
+})();
+</script>
+</body>
+</html>

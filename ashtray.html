@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Teardown #2 — Portable / Disposable Ashtray · Sourcing Engine</title>
+<meta name="description" content="Sourcing plan for a portable disposable ashtray from Bangalore: China and India routes, freight channels, landed cost, vendors and contacts.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#FBF7F1; --card:#FFFFFF; --ink:#2B2320; --mute:#7C6F66; --line:#E8DFD3;
+  --terra:#B85042; --terra-dk:#93392E; --sand:#EFE9DC;
+  --china:#3E5C76; --china-soft:#E7EDF3;
+  --india:#5F8468; --india-soft:#E9F0EA;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font-family:'Inter',system-ui,sans-serif;font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{color:inherit}
+.mono{font-family:'IBM Plex Mono',monospace}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+nav{position:sticky;top:0;z-index:50;background:rgba(251,247,241,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.nav-in{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 20px;max-width:1120px;margin:0 auto}
+.brand{font-family:'Fraunces',serif;font-weight:700;font-size:17px;white-space:nowrap}
+.brand a{text-decoration:none}
+.brand span{color:var(--terra)}
+.nav-links{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none}
+.nav-links::-webkit-scrollbar{display:none}
+.nav-links a{text-decoration:none;font-size:13px;font-weight:600;color:var(--mute);padding:7px 12px;border-radius:99px;white-space:nowrap}
+.nav-links a:hover,.nav-links a:focus-visible{color:var(--ink);background:var(--sand)}
+header{padding:52px 0 38px;border-bottom:1px solid var(--line)}
+.eyebrow{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--terra);margin-bottom:14px}
+h1{font-family:'Fraunces',serif;font-weight:700;font-size:clamp(32px,5.5vw,54px);line-height:1.06;letter-spacing:-.02em;max-width:17ch}
+.lede{margin-top:16px;max-width:62ch;color:var(--mute);font-size:16.5px}
+.lede b{color:var(--ink)}
+.ticker{margin-top:30px;display:flex;flex-wrap:wrap;border:1px solid var(--line);border-radius:10px;overflow:hidden;background:var(--card)}
+.tick{flex:1 1 150px;padding:13px 18px;border-right:1px solid var(--line)}
+.tick:last-child{border-right:0}
+.tick .v{font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:19px}
+.tick .k{font-size:12px;color:var(--mute);margin-top:2px}
+.btn{display:inline-flex;align-items:center;gap:7px;text-decoration:none;font-weight:600;font-size:13px;padding:9px 14px;border-radius:8px;border:1.5px solid transparent;cursor:pointer;transition:transform .12s ease}
+.btn:hover{transform:translateY(-1px)}
+.btn:focus-visible{outline:3px solid rgba(184,80,66,.4);outline-offset:2px}
+.btn-solid{background:var(--terra);color:#fff}
+.btn-solid:hover{background:var(--terra-dk)}
+.btn-ghost{border-color:var(--line);background:var(--card);color:var(--ink)}
+.btn-ghost:hover{border-color:var(--ink)}
+.btn-sm{padding:7px 11px;font-size:12px;border-radius:7px}
+.ext::after{content:"↗";font-size:.85em;opacity:.7}
+section{padding:52px 0;border-bottom:1px solid var(--line)}
+.sec-eyebrow{font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--mute)}
+h2{font-family:'Fraunces',serif;font-weight:700;font-size:clamp(25px,4vw,34px);letter-spacing:-.015em;margin-top:6px}
+.sec-sub{color:var(--mute);margin-top:8px;max-width:66ch}
+h3{font-family:'Fraunces',serif;font-weight:600;font-size:19px}
+/* routes */
+.routes{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:26px}
+.route{background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;display:flex;flex-direction:column}
+.route-head{padding:20px 22px 16px;color:#fff}
+.route-a .route-head{background:var(--china)}
+.route-b .route-head{background:var(--india)}
+.route-tag{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;opacity:.85}
+.route-head h3{color:#fff;font-size:23px;margin-top:4px}
+.route-meta{font-family:'IBM Plex Mono',monospace;font-size:12px;margin-top:10px;opacity:.92;display:flex;flex-wrap:wrap;gap:6px 16px}
+.route-body{padding:18px 22px 22px;display:flex;flex-direction:column;gap:14px;flex:1}
+.route-note{font-size:14px;color:var(--mute)}
+.sup{border:1px solid var(--line);border-radius:10px;padding:13px 15px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.route-a .sup{background:var(--china-soft)}
+.route-b .sup{background:var(--india-soft)}
+.sup .nm{font-weight:700;font-size:14.5px}
+.sup .dt{font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--mute);margin-top:2px}
+.btns{display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end}
+.shelf-links{display:flex;flex-wrap:wrap;gap:8px;margin-top:4px}
+.callout{background:var(--sand);border-radius:10px;padding:14px 16px;font-size:13.5px}
+/* tables */
+.cmp{width:100%;border-collapse:collapse;background:var(--card);border:1px solid var(--line);border-radius:12px;overflow:hidden;font-size:13.5px;margin-top:24px}
+.cmp th,.cmp td{padding:12px 15px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+.cmp thead th{font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;background:var(--ink);color:#fff}
+.cmp thead th.ca{background:var(--china)}
+.cmp thead th.cb{background:var(--india)}
+.cmp tbody tr:last-child td{border-bottom:0}
+.cmp td:first-child{font-weight:600}
+.cmp .mono{font-size:12.5px}
+.cmp a.tel{text-decoration:none;font-weight:600;color:var(--terra);white-space:nowrap}
+.win{background:var(--india-soft)}
+/* math */
+.math-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;align-items:start;margin-top:26px}
+.slip{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px}
+.slip .sub{font-size:13px;color:var(--mute);margin-bottom:14px;margin-top:4px}
+.ledger{width:100%;border-collapse:collapse;font-family:'IBM Plex Mono',monospace;font-size:13.5px}
+.ledger td{padding:9px 2px;border-bottom:1px dashed var(--line)}
+.ledger td:last-child{text-align:right;font-weight:600;white-space:nowrap}
+.ledger tr.sum td{border-bottom:1.5px solid var(--ink);font-weight:600}
+.ledger tr.final td{border-bottom:0;color:var(--terra);font-weight:600;font-size:15px}
+.ledger .lbl{font-family:'Inter',sans-serif;font-weight:500}
+.ledger .lbl small{display:block;color:var(--mute);font-weight:400;font-size:11.5px}
+.calc label{display:block;font-size:12px;font-weight:600;color:var(--mute);margin-bottom:4px}
+.calc-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.calc input,.calc select{width:100%;font-family:'IBM Plex Mono',monospace;font-size:15px;padding:9px 11px;border:1.5px solid var(--line);border-radius:8px;background:var(--paper);color:var(--ink)}
+.calc input:focus,.calc select:focus{outline:none;border-color:var(--terra)}
+.calc-out{margin-top:16px;background:var(--sand);border-radius:10px;padding:14px 16px;display:grid;grid-template-columns:1fr 1fr;gap:10px 16px}
+.co .v{font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:17px}
+.co .v.hot{color:var(--terra)}
+.co .k{font-size:11.5px;color:var(--mute)}
+.fine{font-size:12px;color:var(--mute);margin-top:12px}
+.note{font-size:12.5px;color:var(--mute);margin-top:12px}
+/* phases + ops */
+.phases{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:26px}
+.phase{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px;display:flex;flex-direction:column;gap:10px}
+.phase.hot{background:var(--terra);border-color:var(--terra);color:#fff}
+.phase .ph{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;color:var(--mute)}
+.phase.hot .ph{color:var(--sand)}
+.phase .amt{font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:26px;color:var(--terra)}
+.phase.hot .amt{color:#fff}
+.phase ul{list-style:none;display:flex;flex-direction:column;gap:7px;font-size:13.5px}
+.phase li{padding-left:16px;position:relative}
+.phase li::before{content:"·";position:absolute;left:2px;font-weight:700}
+.phase.hot li{color:var(--sand)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:24px}
+.slip ul{list-style:none;display:flex;flex-direction:column;gap:9px;font-size:13.5px;margin-top:10px}
+.slip li{padding-left:18px;position:relative}
+.slip li::before{content:"—";position:absolute;left:0;color:var(--terra);font-weight:600}
+.gate{background:#FFF6F4;border:1.5px solid var(--terra);border-radius:12px;padding:18px 20px;margin-top:24px}
+.gate h3{color:var(--terra-dk)}
+.gate p{font-size:14px;margin-top:8px}
+footer{padding:52px 0 60px}
+.decide{background:var(--ink);color:#fff;border-radius:16px;padding:30px 28px}
+.decide h2{color:#fff}
+.decide ol{margin:16px 0 20px;list-style:none;display:flex;flex-direction:column;gap:11px;font-size:14.5px;max-width:72ch}
+.decide li{display:flex;gap:13px;align-items:baseline}
+.decide .n{font-family:'IBM Plex Mono',monospace;color:var(--sand);background:rgba(255,255,255,.12);border-radius:6px;padding:2px 8px;font-size:12px;flex-shrink:0}
+.decide .muted{color:rgba(255,255,255,.65)}
+.credit{margin-top:20px;font-size:11.5px;color:var(--mute);text-align:center;line-height:1.7}
+.rv{opacity:0;transform:translateY(12px);transition:opacity .5s ease, transform .5s ease}
+.rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion: reduce){.rv{opacity:1;transform:none;transition:none}.btn{transition:none}html{scroll-behavior:auto}}
+@media (max-width:900px){
+  .routes,.math-grid,.two{grid-template-columns:1fr}
+  .phases{grid-template-columns:1fr}
+  .cmp{display:block;overflow-x:auto}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-in">
+    <div class="brand"><a href="index.html">← The <span>Sourcing</span> Engine</a></div>
+    <div class="nav-links">
+      <a href="#routes">Routes</a>
+      <a href="#compare">Compare</a>
+      <a href="#math">The math</a>
+      <a href="#channel">Channel</a>
+      <a href="#plan">Plan</a>
+      <a href="#gate">Compliance</a>
+    </div>
+  </div>
+</nav>
+
+<header>
+  <div class="wrap">
+    <div class="eyebrow">Teardown #2 · Gel disposable ashtray · Domestic sourcing · Aug 2026</div>
+    <h1>Made in India at ₹8. Imported at ₹42. The decision makes itself.</h1>
+    <p class="lede">A Badlapur supplier lists the exact product — cardboard and gel, 90 mm, disposable — at <b>₹8 a piece</b>. The same ashtray imported from China lands at <b>₹42</b> once freight and 32% duty are in, and only at 48,000-piece volumes. <b>Domestic isn't the fallback here; it's five times cheaper and available in days.</b> Below: the two domestic routes, costed, with contacts.</p>
+    <div class="ticker rv">
+      <div class="tick"><div class="v">₹8</div><div class="k">domestic wholesale, listed today</div></div>
+      <div class="tick"><div class="v">₹4–7</div><div class="k">estimated cost if we make it</div></div>
+      <div class="tick"><div class="v">₹42</div><div class="k">imported landed — for reference only</div></div>
+      <div class="tick"><div class="v">15 days</div><div class="k">domestic delivery, no customs</div></div>
+      <div class="tick"><div class="v">₹18–30</div><div class="k">target price to restaurants &amp; hotels</div></div>
+    </div>
+  </div>
+</header>
+
+<!-- ============ THESIS ============ -->
+<section id="thesis">
+  <div class="wrap">
+    <div class="sec-eyebrow">01 · The product &amp; the call</div>
+    <h2>What we're buying, and why it gets bought here</h2>
+    <div class="two">
+      <div class="slip rv">
+        <h3>Specification to quote against</h3>
+        <ul>
+          <li><b>Shell:</b> coated paper / cardboard cup, ~90 mm diameter, 3 cigarette rests, MAX fill line, glossy finish.</li>
+          <li><b>Fill:</b> water-activated gel granules over an extinguishing-sand base — self-extinguishing, smokeless, odour-trapping.</li>
+          <li><b>Pack:</b> the domestic listings ship in packs of 25; that's already the right case size for a café.</li>
+          <li><b>Branding:</b> sleeve print — our logo, or the venue's for hotel white-label.</li>
+          <li><b>Confirm on every quote:</b> gel set time, burn-through, odour hold after 3 hours, dry-granule shelf life, unit weight, case count, and whether gel ships loaded or user-activated.</li>
+        </ul>
+      </div>
+      <div class="slip rv">
+        <h3>The price picture, all in one place</h3>
+        <ul>
+          <li><b>₹8/pc</b> — Ahilya Enterprises, Badlapur: "Disposable Ashtray with Gel", cardboard + gel + paper, 90 mm. TrustSEAL, 8 yrs, 5★ from 102 ratings, 87% response.</li>
+          <li><b>₹75/pc</b> — Infinity Exim, Pune: same category, sold retail in packs of 25, 15-day delivery. A reseller price, not a factory one.</li>
+          <li><b>₹42/pc</b> — landed cost importing from China at the 48,000-piece tier.</li>
+          <li><b>$0.24–0.45/pc</b> — what the West pays at retail in 25-packs, for reference on positioning.</li>
+          <li>The spread between ₹8 and ₹75 on the same product is the whole opportunity: <b>nobody is running this as a branded offline supply business.</b></li>
+        </ul>
+      </div>
+    </div>
+    <div class="callout rv" style="margin-top:20px"><b>The call:</b> procure domestically. At ₹8 landed-equivalent, selling to a restaurant at ₹18–25 gives 55–68% gross margin with zero customs exposure, zero forex, and reorders inside a week. Importing only becomes interesting past six-figure annual volumes, and even then the gain is small — it is a Year-2 question, kept on this page for reference and nothing more.</div>
+  </div>
+</section>
+
+<!-- ============ ROUTES ============ -->
+<section id="routes">
+  <div class="wrap">
+    <div class="sec-eyebrow">02 · Domestic sourcing</div>
+    <h2>Two domestic options — buy it, or make it</h2>
+    <p class="sec-sub">Option A gets us selling next week with no capex. Option B costs less per piece and gives us a product nobody else can copy on price. Most likely we run A first and move to B once the reorder data is in.</p>
+
+    <div class="routes">
+      <article class="route route-b rv">
+        <div class="route-head">
+          <div class="route-tag">Option A · Buy ready stock</div>
+          <h3>Source from Indian suppliers</h3>
+          <div class="route-meta"><span>₹8–75/pc listed</span><span>low MOQ</span><span>7–15 days</span></div>
+        </div>
+        <div class="route-body">
+          <p class="route-note">The finished gel ashtray already exists in Indian wholesale. We buy, sleeve-brand or over-label, and sell. No capex, no formulation risk, no minimum production run — and we can be in front of a restaurant with real stock within a fortnight.</p>
+
+          <div class="sup"><div><div class="nm">Ahilya Enterprises · Badlapur</div><div class="dt">Disposable ashtray with gel · cardboard/gel/paper · 90 mm · <b>₹8/pc</b> · 5★ (102) · 87% response</div></div><div class="btns"><a class="btn btn-ghost btn-sm" href="tel:+917943439525">Call</a><a class="btn btn-ghost btn-sm ext" target="_blank" rel="noopener" href="https://m.indiamart.com/proddetail/disposable-ashtray-with-gel-2859038804591.html">Listing</a></div></div>
+          <div class="sup"><div><div class="nm">Infinity Exim · Pune</div><div class="dt">Paper ashtray + extinguishing sand · 90 mm · 3 slots · pack of 25 · ₹75/pc · 15-day delivery</div></div><div class="btns"><a class="btn btn-ghost btn-sm" href="tel:+918047643349">Call</a><a class="btn btn-ghost btn-sm ext" target="_blank" rel="noopener" href="https://www.indiamart.com/proddetail/disposable-smokeless-paper-ashtray-with-extinguishing-sand-for-hotel-restaurant-office-use-2858671258373.html">Listing</a></div></div>
+          <div class="sup"><div><div class="nm">Parkash Traders India · Delhi</div><div class="dt">Plain paper ashtray, 75 mm · ₹50/pc · 11 yrs · 4.4★</div></div><div class="btns"><a class="btn btn-ghost btn-sm" href="tel:+918047643155">Call</a><a class="btn btn-ghost btn-sm ext" target="_blank" rel="noopener" href="https://dir.indiamart.com/impcat/ashtray.html">Listing</a></div></div>
+          <div class="sup"><div><div class="nm">Elite Hotel Supplies · Mumbai</div><div class="dt">Hotel channel incumbent — useful as a competitor read, not a supplier</div></div><div class="btns"><a class="btn btn-ghost btn-sm" href="tel:+917942628000">Call</a></div></div>
+
+          <div class="callout"><b>First question on every call:</b> what is the price at 5,000 and 25,000 pieces, and will they sleeve-print our logo? The ₹8 listing is almost certainly a slab price — the real number lands after that conversation.</div>
+          <div class="shelf-links">
+            <a class="btn btn-solid btn-sm ext" target="_blank" rel="noopener" href="https://dir.indiamart.com/impcat/ashtray.html">Browse IndiaMART · ashtray</a>
+            <a class="btn btn-ghost btn-sm ext" target="_blank" rel="noopener" href="https://www.tradeindia.com/manufacturers/cigarette-ashtray.html">TradeIndia</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="route route-a rv" style="--x:0">
+        <div class="route-head" style="background:var(--terra)">
+          <div class="route-tag">Option B · Make it here</div>
+          <h3>Contract-manufacture in India</h3>
+          <div class="route-meta"><span>est. ₹4–7/pc</span><span>MOQ 10,000+</span><span>3–4 weeks first run</span></div>
+        </div>
+        <div class="route-body">
+          <p class="route-note">There is no exotic input here. The shell is a printed paper cup — India makes billions of them, Bangalore included. The fill is silica sand plus absorbent granules, both commodity. Assemble the two and we own the product, the print, and the cost base.</p>
+
+          <div class="sup" style="background:#FFF6F4"><div><div class="nm">Shell — Bengaluru paper-cup converters</div><div class="dt">Printed cups ₹0.60–1.68/pc in Bengaluru · domestic MOQ from 10,000 · 3–4 wks first order, 2–3 wks reorder</div></div><a class="btn btn-ghost btn-sm ext" target="_blank" rel="noopener" href="https://dir.indiamart.com/bengaluru/printed-paper-cup.html">Find converters</a></div>
+          <div class="sup" style="background:#FFF6F4"><div><div class="nm">Fill — silica sand suppliers</div><div class="dt">Asian Min Chem from ₹2.50/kg · Adore Multiline ₹5/kg · SRP Global ₹5.80/kg</div></div><div class="btns"><a class="btn btn-ghost btn-sm" href="tel:+918048272502">Call</a><a class="btn btn-ghost btn-sm ext" target="_blank" rel="noopener" href="https://dir.indiamart.com/impcat/silica-sand.html">Directory</a></div></div>
+          <div class="sup" style="background:#FFF6F4"><div><div class="nm">Fill — deodorant / gel granules</div><div class="dt">Sold in India as loose refill packs today; superabsorbent granule + fragrance is the only formulation work</div></div><a class="btn btn-ghost btn-sm ext" target="_blank" rel="noopener" href="https://thecraze.in/products/disposable-smoke-extinguishing-deodorant-sand-for-ashtray-80pcs">Reference product</a></div>
+          <div class="sup" style="background:#FFF6F4"><div><div class="nm">Assembly &amp; pack</div><div class="dt">Fill, seal film, pack of 25 — small-unit job work in Bangalore; no machinery purchase needed at pilot scale</div></div></div>
+
+          <div class="callout"><b>Why it's worth the extra month:</b> at ₹4–7 a piece we can undercut anyone on trade price and still hold 70%+ margin, sleeve-print per client, and change the label for a hotel in a week. That's a defensible position; reselling someone else's ₹8 ashtray is not.</div>
+        </div>
+      </article>
+    </div>
+
+    <table class="cmp rv">
+      <thead><tr><th>Option B cost build-up — estimate, to be replaced by quotes</th><th class="ca">Assumption</th><th class="cb">₹ / piece</th></tr></thead>
+      <tbody>
+        <tr><td>Printed paper shell</td><td>90 mm cup, custom sleeve print, 10,000+ run</td><td class="mono">₹1.50 – 2.50</td></tr>
+        <tr><td>Silica sand base</td><td>~15 g at ₹2.50–5.80 / kg</td><td class="mono">₹0.04 – 0.09</td></tr>
+        <tr><td>Gel granules + fragrance</td><td>~5 g of absorbent granule, allowing a wide margin for error</td><td class="mono">₹0.50 – 1.50</td></tr>
+        <tr><td>Seal film / lidding</td><td>peel film per unit</td><td class="mono">₹0.30 – 0.60</td></tr>
+        <tr><td>Filling, sealing, packing labour</td><td>job work at pilot scale</td><td class="mono">₹1.00 – 2.00</td></tr>
+        <tr><td>Carton, 25-pack outer, wastage</td><td>allowance</td><td class="mono">₹0.50 – 1.00</td></tr>
+        <tr class="win"><td><b>Estimated finished cost</b></td><td>before GST, at ~10,000 pieces</td><td class="mono"><b>₹4 – 7</b></td></tr>
+      </tbody>
+    </table>
+    <p class="note"><b>Read this table as a hypothesis, not a quote.</b> The shell and sand figures come from published Indian listings; gel, film, labour and wastage are my estimates and are the numbers most likely to be wrong. Two converter quotes and one granule quote will replace the whole table — that is the single highest-value thing to do this week.</p>
+
+    <table class="cmp rv">
+      <thead><tr><th>Supplier contact sheet — domestic</th><th class="ca">What / where</th><th class="cb">Contact</th></tr></thead>
+      <tbody>
+        <tr class="win"><td>Ahilya Enterprises</td><td>Badlapur · disposable ashtray with gel, ₹8/pc listed</td><td><a class="tel" href="tel:+917943439525">+91 79434 39525</a></td></tr>
+        <tr class="win"><td>Infinity Exim</td><td>Pune · paper ashtray + extinguishing sand, pack of 25</td><td><a class="tel" href="tel:+918047643349">+91 80476 43349</a></td></tr>
+        <tr class="win"><td>Parkash Traders India</td><td>Delhi · plain paper ashtray ₹50/pc, 75 mm</td><td><a class="tel" href="tel:+918047643155">+91 80476 43155</a></td></tr>
+        <tr class="win"><td>Ridhi Sidhi Kitchenware</td><td>Sonipat · ashtrays from ₹30/pc, 19 yrs</td><td><a class="tel" href="tel:+918048967097">+91 80489 67097</a></td></tr>
+        <tr><td>Asian Min Chem</td><td>India · silica sand from ₹2.50/kg</td><td><a class="tel" href="tel:+918048272502">+91 80482 72502</a></td></tr>
+        <tr><td>Adore Multiline Products</td><td>India · silica sand from ₹5/kg</td><td><a class="tel" href="tel:+918043878426">+91 80438 78426</a></td></tr>
+        <tr><td>SRP Global Exports</td><td>India · silica sand from ₹5.80/kg</td><td><a class="tel" href="tel:+917942957668">+91 79429 57668</a></td></tr>
+        <tr><td>Bengaluru paper-cup converters</td><td>Bengaluru · printed cups ₹0.60–1.68/pc, MOQ from 10,000</td><td>Directory: <a target="_blank" rel="noopener" href="https://dir.indiamart.com/bengaluru/printed-paper-cup.html">IndiaMART Bengaluru ↗</a></td></tr>
+        <tr><td>Bar Decor Essential</td><td>India · bar &amp; café channel</td><td><a class="tel" href="tel:+917949226080">+91 79492 26080</a></td></tr>
+      </tbody>
+    </table>
+    <p class="note">Numbers are IndiaMART's published call-connect lines (they route to the seller), pulled 12 Aug 2026 — verify on the first call.</p>
+  </div>
+</section>
+
+<!-- ============ COMPARE ============ -->
+<section id="compare">
+  <div class="wrap">
+    <div class="sec-eyebrow">03 · The three options side by side</div>
+    <h2>Why import is off the table</h2>
+    <p class="sec-sub">Kept on the page so the question doesn't get reopened in the next meeting.</p>
+
+    <table class="cmp rv">
+      <thead><tr><th></th><th class="cb">A · Buy domestic</th><th class="cb">B · Make in India</th><th class="ca">C · Import from China</th></tr></thead>
+      <tbody>
+        <tr><td>Cost per piece</td><td class="mono win">₹8 listed</td><td class="mono win">₹4–7 estimated</td><td class="mono">₹42 landed (at 48,000 pcs)</td></tr>
+        <tr><td>Minimum commitment</td><td class="mono">low — slab pricing</td><td class="mono">~10,000 pcs</td><td class="mono">2,400 pcs, but economics need 48,000</td></tr>
+        <tr><td>Cash for a first run</td><td class="mono win">₹8–40K</td><td class="mono">₹50–70K</td><td class="mono">₹15–20L</td></tr>
+        <tr><td>Time to stock</td><td class="mono win">7–15 days</td><td class="mono">3–4 weeks</td><td class="mono">6–10 weeks</td></tr>
+        <tr><td>Reorder cycle</td><td class="mono win">days</td><td class="mono">2–3 weeks</td><td class="mono">6–10 weeks</td></tr>
+        <tr><td>Customs, duty, forex</td><td class="mono win">none</td><td class="mono win">none</td><td class="mono">~32% duty, IEC, AD code, CHA</td></tr>
+        <tr><td>Own the product</td><td class="mono">sleeve branding only</td><td class="mono win">fully — spec, print, cost base</td><td class="mono">full OEM, at scale</td></tr>
+        <tr><td>Main risk</td><td>Supplier can sell to our competitor tomorrow</td><td>Formulation and job-work quality on the first run</td><td>Cash locked 10 weeks in a slow consumable</td></tr>
+      </tbody>
+    </table>
+    <div class="callout rv" style="margin-top:18px"><b>The one-line version for the boss:</b> importing costs five times more per piece, needs twenty times the cash, and takes six times as long to restock — on a product India already makes. We revisit it only if domestic quotes come back above ₹15 a piece.</div>
+  </div>
+</section>
+
+<!-- ============ MATH ============ -->
+<section id="math">
+  <div class="wrap">
+    <div class="sec-eyebrow">04 · Cost &amp; calculations</div>
+    <h2>What the unit economics look like domestically</h2>
+    <p class="sec-sub">Left: buying at ₹8 and selling direct to a restaurant. Right: change the cost and price to test any scenario, including making it ourselves.</p>
+
+    <div class="math-grid">
+      <div class="slip rv">
+        <h3>Worked example — Option A, sold direct to HORECA</h3>
+        <div class="sub">buy at ₹8, sell a case of 500 at ₹20/pc, Bangalore delivery</div>
+        <table class="ledger">
+          <tr><td class="lbl">Purchase price <small>listed slab price, to confirm at volume</small></td><td>₹8.00</td></tr>
+          <tr><td class="lbl">Sleeve / over-label branding <small>at 5,000+ pcs</small></td><td>₹1.00</td></tr>
+          <tr><td class="lbl">Inbound freight + local delivery <small>within Karnataka</small></td><td>₹1.20</td></tr>
+          <tr><td class="lbl">Wastage, damages, samples <small>5% allowance</small></td><td>₹0.50</td></tr>
+          <tr class="sum"><td class="lbl">Delivered cost per piece</td><td>≈ ₹10.70</td></tr>
+          <tr><td class="lbl">Sale price to restaurant <small>case of 500</small></td><td>₹20.00</td></tr>
+          <tr class="final"><td class="lbl">Gross margin</td><td>≈ 47%</td></tr>
+        </table>
+        <p class="fine">Made in-house at ₹5.50 the same ₹20 sale gives roughly <b>66%</b>. GST is creditable both ways. A single 40-seat restaurant getting through 150–250 pieces a month is worth ₹3,000–5,000 of revenue a month at this price — the whole business is how many venues we can hold, not what any one of them pays.</p>
+      </div>
+
+      <div class="slip calc rv">
+        <h3>Unit economics calculator</h3>
+        <div class="sub">Domestic — edit any field</div>
+        <div class="calc-grid">
+          <div><label for="fob">Cost per piece (₹)</label><input id="fob" type="number" step="0.5" value="8" inputmode="decimal"></div>
+          <div><label for="qty">Order quantity (pcs)</label><input id="qty" type="number" step="500" value="5000" inputmode="numeric"></div>
+          <div><label for="wt">Branding + handling (₹/pc)</label><input id="wt" type="number" step="0.25" value="2.70" inputmode="decimal"></div>
+          <div><label for="rate">Venues supplied</label><input id="rate" type="number" step="5" value="20" inputmode="numeric"></div>
+          <div><label for="duty">Pieces per venue per month</label><input id="duty" type="number" step="10" value="200" inputmode="numeric"></div>
+          <div><label for="mrp">Sale price (₹ / pc)</label><input id="mrp" type="number" step="1" value="20" inputmode="numeric"></div>
+        </div>
+        <div class="calc-out">
+          <div class="co"><div class="v" id="o-landed">—</div><div class="k">delivered cost / pc</div></div>
+          <div class="co"><div class="v hot" id="o-eff">—</div><div class="k">gross margin</div></div>
+          <div class="co"><div class="v" id="o-margin">—</div><div class="k">monthly gross profit at this venue count</div></div>
+          <div class="co"><div class="v" id="o-cash">—</div><div class="k">cash needed for the order</div></div>
+        </div>
+        <p class="fine">No duty, no forex, no IGST credit workings — that's the point of buying domestically. GST is creditable on purchase and charged on sale.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CHANNEL ============ -->
+<section id="channel">
+  <div class="wrap">
+    <div class="sec-eyebrow">05 · Offline distribution</div>
+    <h2>Who touches it, and what each hand takes</h2>
+    <p class="sec-sub">This is the part that decides whether the product works. A ₹40–50 consumable cannot carry a distributor, a retailer and an importer all at once — so we pick which layers to keep.</p>
+
+    <table class="cmp rv">
+      <thead><tr><th>Channel</th><th class="ca">How it's sold</th><th class="ca">Our price</th><th class="cb">Their margin</th><th>Why they say yes</th></tr></thead>
+      <tbody>
+        <tr class="win"><td>Restaurants, cafés, bars, banquet halls</td><td>Direct, monthly consumable order (case of 500–1,000)</td><td class="mono">₹18–25 / pc</td><td class="mono">n/a — it's a cost line</td><td>Replaces washing ashtrays and the smell complaint; cheaper than staff time.</td></tr>
+        <tr class="win"><td>Hotels &amp; serviced apartments</td><td>Direct or via their housekeeping supplier, quarterly PO</td><td class="mono">₹22–30 / pc</td><td class="mono">n/a</td><td>Room-safe, single-use, brandable with the property logo.</td></tr>
+        <tr><td>Smoke shops &amp; paan/tobacconist counters</td><td>Through a distributor, sold as a consumer 5- or 10-pack</td><td class="mono">₹28–35 / pc to distributor</td><td class="mono">retailer 25–30% · distributor 8–12%</td><td>Impulse add-on at the counter; MRP ₹99 for 5 or ₹179 for 10.</td></tr>
+        <tr><td>Car accessory shops &amp; fuel-station marts</td><td>Distributor-led, 5-pack hanging card</td><td class="mono">₹28–35 / pc</td><td class="mono">retailer 25–30%</td><td>Solves the car-ashtray smell problem at a lower price than a fitted ashtray.</td></tr>
+        <tr><td>Events, festivals, co-working smoking zones</td><td>Direct B2B, bulk per-event</td><td class="mono">₹15–20 / pc at volume</td><td class="mono">n/a</td><td>Fire safety and litter control; often a venue requirement.</td></tr>
+      </tbody>
+    </table>
+
+    <div class="two">
+      <div class="slip rv">
+        <h3>The margin ladder — 5-pack at ₹99 MRP</h3>
+        <ul>
+          <li>Consumer pays <b>₹99</b> for 5 → ₹19.80 a piece.</li>
+          <li>Retailer buys at ~₹72 (27% margin) → ₹14.40 a piece.</li>
+          <li>Distributor buys at ~₹65 (10%) → <b>₹13 a piece to us</b>.</li>
+          <li>Against a delivered cost of ₹10.70 that's a thin 18% — workable but not exciting.</li>
+          <li><b>Made in-house at ₹5.50 it becomes 58%</b>, and the retail pack turns into a real second channel. This is the clearest argument for Option B.</li>
+        </ul>
+      </div>
+      <div class="slip rv">
+        <h3>So the sequence is</h3>
+        <ul>
+          <li><b>Direct HORECA first.</b> No distributor, no retailer — a case sold straight to a restaurant at ₹18–25 holds ~47% margin even on bought-in stock.</li>
+          <li><b>Prove weekly reorder</b> across 15–20 venues. That number decides everything after it.</li>
+          <li><b>Then move to Option B</b> if the volume supports a 10,000-piece production run — margin roughly doubles.</li>
+          <li><b>Then add the retail 5-pack</b> for smoke shops and car accessory counters, which only pays properly once we're making it ourselves.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="callout rv" style="margin-top:18px"><b>Honest caveat:</b> the trade prices above are constructed from standard FMCG margin structures, not quotes from Indian distributors, and the ₹8 supply price is a listed slab, not a negotiated one. The first three HORECA conversations and one supplier call will replace both — those numbers, not this arithmetic, set the price list.</div>
+  </div>
+</section>
+
+<!-- ============ GATE ============ -->
+<section id="gate">
+  <div class="wrap">
+    <div class="sec-eyebrow">06 · The gate</div>
+    <h2>One rule decides how we brand this</h2>
+    <div class="gate rv">
+      <h3>COTPA Section 5 — no tobacco branding, ours or anyone's</h3>
+      <p>India's Cigarettes and Other Tobacco Products Act prohibits advertising of tobacco products <b>directly or indirectly</b>, and the rules explicitly treat using a tobacco brand name on other products as indirect advertising. Penalties run to imprisonment and fines, escalating on repeat offence.</p>
+      <p><b>What this means in practice.</b> Selling an ashtray is legal and unrestricted — it is not a tobacco product. What we must never do is take a printing job that puts a cigarette or gutka brand on it, or market ours with imagery that promotes smoking. That kills one revenue line the Western promo trade relies on (tobacco-company giveaways) and leaves every other one open: cafés, bars, hotels, offices, events, car accessories, travel and general corporate gifting, all branded with <i>their own</i> logo or ours.</p>
+      <p><b>Action:</b> a one-page brand-safety rule for the sales deck — we print client logos, never tobacco brands — plus a marketplace-policy check before listing (smoking accessories are permitted on Amazon.in, but listing rules should be read before the first upload). Not a legal opinion; worth 30 minutes with a lawyer before the B2B pitch goes out.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PLAN ============ -->
+<section id="plan">
+  <div class="wrap">
+    <div class="sec-eyebrow">07 · Investment</div>
+    <h2>Three gates — all of them small now</h2>
+    <p class="sec-sub">Dropping the import route takes the biggest number off this page. Nothing here needs more than ₹70K.</p>
+    <div class="phases">
+      <div class="phase rv">
+        <div class="ph">PHASE 0 · THIS WEEK</div><h3>Quotes &amp; samples</h3><div class="amt">₹3–5K</div>
+        <ul><li>Call Ahilya, Infinity Exim and two Bengaluru paper-cup converters</li><li>Ask each for price at 5,000 / 25,000 pcs and sleeve-print capability</li><li>Buy 2–3 sample packs of 25; run burn, odour and leak tests</li><li>One granule/sand quote to price Option B properly</li></ul>
+      </div>
+      <div class="phase rv">
+        <div class="ph">PHASE 1 · 3–4 WEEKS</div><h3>HORECA pilot</h3><div class="amt">₹25–40K</div>
+        <ul><li>2,500–5,000 pcs bought domestically, sleeve-branded</li><li>Place cases in 15–20 Bangalore restaurants, cafés, bars and hotels</li><li>Measure reorder rate and pieces per venue per month</li><li>Output: a real price list and a repeat-order number</li></ul>
+      </div>
+      <div class="phase hot rv">
+        <div class="ph">PHASE 2 · ON PROOF</div><h3>Own production</h3><div class="amt">₹50–70K</div>
+        <ul><li>10,000-piece run: printed shell + filled gel, our spec</li><li>Cost drops to ~₹5.50, margin roughly doubles</li><li>Unlocks the retail 5-pack for smoke shops and car accessory counters</li><li>Triggered only by proven weekly reorder from Phase 1</li></ul>
+      </div>
+    </div>
+    <div class="two">
+      <div class="slip rv">
+        <h3>Why this works</h3>
+        <ul>
+          <li><b>It's a consumable.</b> Every other product in this engine sells once; this reorders monthly from the same account.</li>
+          <li>Domestic supply means we can say yes to a 200-piece trial order — impossible on an import model.</li>
+          <li>The channel the boss named is exactly where direct selling beats the margin ladder.</li>
+          <li>Total spend to know whether this is a business: under ₹45K.</li>
+        </ul>
+      </div>
+      <div class="slip rv">
+        <h3>What could still kill it</h3>
+        <ul>
+          <li><b>The ₹8 might not hold.</b> It's a listed slab price from one supplier; a real quote could come back at ₹15–20 and halve the margin.</li>
+          <li><b>No supplier lock-in.</b> On Option A the same supplier can sell to anyone — which is exactly why Option B matters.</li>
+          <li><b>Reorder rate is unproven.</b> A restaurant may use far fewer than 200 a month. Phase 1 exists to find out.</li>
+          <li><b>Quality on a job-work run.</b> Gel set time and burn-through must be tested before any venue sees branded stock.</li>
+          <li><b>Collections.</b> Selling to small venues on credit is how this kind of business quietly dies — cash or advance for the first three orders.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="decide rv">
+      <h2>Decisions we need</h2>
+      <ol>
+        <li><span class="n">01</span><span>Confirm domestic-only sourcing for this product — import stays documented on this page for reference, not as a live option.</span></li>
+        <li><span class="n">02</span><span>Approve ₹3–5K this week for quotes and samples across both domestic options.</span></li>
+        <li><span class="n">03</span><span>Agree the Phase 1 pilot metric: weekly reorder rate across 15–20 Bangalore venues is what unlocks own production.</span></li>
+        <li><span class="n">04</span><span>Green-light the COTPA brand-safety rule (we print client and own logos, never tobacco brands) before the sales deck goes out.</span></li>
+      </ol>
+      <span class="muted">The Sourcing Engine · Teardown #2 · prepared by Arfa · August 2026</span>
+    </div>
+    <div class="credit">Domestic prices, MOQs and contacts from IndiaMART and TradeIndia listings (Ahilya Enterprises, Infinity Exim, Parkash Traders, silica sand suppliers, Bengaluru paper-cup converters); import comparison from the supplier's published tier pricing on Made-in-China and 2026 China–India freight operator ranges; Western retail from Walmart listings; COTPA summary from public legal commentary — all August 2026. The Option B cost build-up and the trade-margin ladder are modelled estimates, not quotes.</div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var $ = function(id){ return document.getElementById(id); };
+  var inr = function(n){ return '₹' + Math.round(n).toLocaleString('en-IN'); };
+  function calc(){
+    var cost = parseFloat($('fob').value)||0, qty = parseFloat($('qty').value)||0,
+        add = parseFloat($('wt').value)||0, venues = parseFloat($('rate').value)||0,
+        per = parseFloat($('duty').value)||0, price = parseFloat($('mrp').value)||0;
+    var delivered = cost + add;
+    var margin = price>0 ? (price - delivered)/price*100 : 0;
+    var monthly = (price - delivered) * venues * per;
+    $('o-landed').textContent = '₹' + delivered.toFixed(2);
+    $('o-eff').textContent = margin.toFixed(0) + '%';
+    $('o-margin').textContent = inr(monthly);
+    $('o-cash').textContent = inr(cost*qty);
+  }
+  ['fob','qty','wt','rate','duty','mrp'].forEach(function(id){ $(id).addEventListener('input', calc); });
+  calc();
+})();
+(function(){
+  if (!('IntersectionObserver' in window)) { document.querySelectorAll('.rv').forEach(function(el){ el.classList.add('in'); }); return; }
+  var io = new IntersectionObserver(function(es){
+    es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, {threshold:.08});
+  document.querySelectorAll('.rv').forEach(function(el){ io.observe(el); });
+})();
+</script>
+</body>
+</html>

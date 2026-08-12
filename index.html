@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sourcing Engine · Batch 01 — Home &amp; Comfort</title>
+<meta name="description" content="West-to-India product discovery engine: scored recommendations, India demand checks, sourcing plans and vendors. Batch 01: Home & Comfort.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#FBF7F1; --card:#FFFFFF; --ink:#2B2320; --mute:#7C6F66; --line:#E8DFD3;
+  --terra:#B85042; --terra-dk:#93392E; --sand:#EFE9DC;
+  --china:#3E5C76; --india:#5F8468; --india-soft:#E9F0EA; --skip:#9A928B;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font-family:'Inter',system-ui,sans-serif;font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{color:inherit}
+.mono{font-family:'IBM Plex Mono',monospace}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+nav{position:sticky;top:0;z-index:50;background:rgba(251,247,241,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.nav-in{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 20px;max-width:1120px;margin:0 auto}
+.brand{font-family:'Fraunces',serif;font-weight:700;font-size:17px;white-space:nowrap}
+.brand span{color:var(--terra)}
+.nav-links{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none}
+.nav-links::-webkit-scrollbar{display:none}
+.nav-links a{text-decoration:none;font-size:13px;font-weight:600;color:var(--mute);padding:7px 12px;border-radius:99px;white-space:nowrap}
+.nav-links a:hover,.nav-links a:focus-visible{color:var(--ink);background:var(--sand)}
+header{padding:52px 0 38px;border-bottom:1px solid var(--line)}
+.eyebrow{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--terra);margin-bottom:14px}
+h1{font-family:'Fraunces',serif;font-weight:700;font-size:clamp(32px,5.5vw,54px);line-height:1.06;letter-spacing:-.02em;max-width:18ch}
+.lede{margin-top:16px;max-width:62ch;color:var(--mute);font-size:16.5px}
+.lede b{color:var(--ink)}
+.ticker{margin-top:30px;display:flex;flex-wrap:wrap;border:1px solid var(--line);border-radius:10px;overflow:hidden;background:var(--card)}
+.tick{flex:1 1 150px;padding:13px 18px;border-right:1px solid var(--line)}
+.tick:last-child{border-right:0}
+.tick .v{font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:19px}
+.tick .k{font-size:12px;color:var(--mute);margin-top:2px}
+.btn{display:inline-flex;align-items:center;gap:7px;text-decoration:none;font-weight:600;font-size:13px;padding:9px 14px;border-radius:8px;border:1.5px solid transparent;cursor:pointer;transition:transform .12s ease}
+.btn:hover{transform:translateY(-1px)}
+.btn:focus-visible{outline:3px solid rgba(184,80,66,.4);outline-offset:2px}
+.btn-solid{background:var(--terra);color:#fff}
+.btn-solid:hover{background:var(--terra-dk)}
+.btn-ghost{border-color:var(--line);background:var(--card);color:var(--ink)}
+.btn-ghost:hover{border-color:var(--ink)}
+.btn-sm{padding:7px 11px;font-size:12px;border-radius:7px}
+.ext::after{content:"↗";font-size:.85em;opacity:.7}
+section{padding:52px 0;border-bottom:1px solid var(--line)}
+.sec-eyebrow{font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--mute)}
+h2{font-family:'Fraunces',serif;font-weight:700;font-size:clamp(25px,4vw,34px);letter-spacing:-.015em;margin-top:6px}
+.sec-sub{color:var(--mute);margin-top:8px;max-width:64ch}
+h3{font-family:'Fraunces',serif;font-weight:600;font-size:19px}
+/* engine strip */
+.stages{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-top:26px}
+.stage{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px 14px 12px}
+.stage .n{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--terra);letter-spacing:.1em}
+.stage .t{font-weight:700;font-size:14.5px;margin-top:3px}
+.stage .d{font-size:11.5px;color:var(--mute);margin-top:3px;line-height:1.45}
+/* scoreboard */
+.cmp{width:100%;border-collapse:collapse;background:var(--card);border:1px solid var(--line);border-radius:12px;overflow:hidden;font-size:13px}
+.cmp th,.cmp td{padding:11px 13px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+.cmp thead th{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.06em;text-transform:uppercase;background:var(--ink);color:#fff}
+.cmp tbody tr:last-child td{border-bottom:0}
+.cmp td:first-child{font-weight:600}
+.cmp .mono{font-size:12px;white-space:nowrap}
+/* verdict chips */
+.chip{display:inline-flex;align-items:center;line-height:1.2;font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.1em;font-weight:600;padding:4px 9px;border-radius:99px;white-space:nowrap}
+.chip.build{background:var(--terra);color:#fff}
+.chip.next{background:#fff;color:var(--terra);border:1.5px solid var(--terra)}
+.chip.test{background:var(--india);color:#fff}
+.chip.skip{background:var(--skip);color:#fff}
+/* product cards */
+.pgrid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:28px}
+.prod{background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;display:flex;flex-direction:column}
+.prod.full{grid-column:1 / -1;display:grid;grid-template-columns:340px 1fr}
+.pimg{aspect-ratio:4/3;background:var(--sand);position:relative;overflow:hidden}
+.prod.full .pimg{aspect-ratio:auto;height:100%;min-height:280px}
+.pimg img{width:100%;height:100%;object-fit:cover}
+.pimg.noimg img{display:none}
+.pimg.noimg::after{content:attr(data-name);position:absolute;inset:0;display:flex;align-items:center;justify-content:center;padding:20px;text-align:center;font-family:'Fraunces',serif;font-weight:600;font-size:17px;color:var(--mute)}
+.pimg .chip{position:absolute;top:12px;left:12px}
+.pnum{position:absolute;top:12px;right:12px;font-family:'IBM Plex Mono',monospace;font-size:11px;background:rgba(43,35,32,.82);color:#fff;padding:4px 8px;border-radius:6px}
+.pbody{padding:18px 20px 20px;display:flex;flex-direction:column;gap:10px}
+.pbody h3{font-size:21px}
+.facts{display:flex;flex-direction:column;gap:7px;font-size:13px}
+.fact{display:grid;grid-template-columns:74px 1fr;gap:10px}
+.fact .k{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.08em;color:var(--mute);text-transform:uppercase;padding-top:2px}
+.fact .v b{font-weight:700}
+.scores{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--mute)}
+.scores b{color:var(--ink);font-weight:600}
+.pbtns{display:flex;flex-wrap:wrap;gap:7px;margin-top:auto;padding-top:6px}
+.note{font-size:12px;color:var(--mute)}
+/* method + next */
+.two{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:26px}
+.slip{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px 22px}
+.slip ul{list-style:none;display:flex;flex-direction:column;gap:9px;font-size:13.5px;margin-top:10px}
+.slip li{padding-left:18px;position:relative}
+.slip li::before{content:"—";position:absolute;left:0;color:var(--terra);font-weight:600}
+footer{padding:52px 0 60px}
+.decide{background:var(--ink);color:#fff;border-radius:16px;padding:30px 28px}
+.decide h2{color:#fff}
+.decide ol{margin:16px 0 20px;list-style:none;display:flex;flex-direction:column;gap:11px;font-size:14.5px;max-width:72ch}
+.decide li{display:flex;gap:13px;align-items:baseline}
+.decide .n{font-family:'IBM Plex Mono',monospace;color:var(--sand);background:rgba(255,255,255,.12);border-radius:6px;padding:2px 8px;font-size:12px;flex-shrink:0}
+.decide .muted{color:rgba(255,255,255,.65)}
+.credit{margin-top:20px;font-size:11.5px;color:var(--mute);text-align:center;line-height:1.7}
+.rv{opacity:0;transform:translateY(12px);transition:opacity .5s ease, transform .5s ease}
+.rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion: reduce){.rv{opacity:1;transform:none;transition:none}.btn{transition:none}html{scroll-behavior:auto}}
+@media (max-width:920px){
+  .pgrid,.two{grid-template-columns:1fr}
+  .prod.full{grid-template-columns:1fr}
+  .prod.full .pimg{min-height:220px;aspect-ratio:16/9}
+  .stages{grid-template-columns:1fr 1fr}
+  .cmp{display:block;overflow-x:auto}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-in">
+    <div class="brand">The <span>Sourcing</span> Engine</div>
+    <div class="nav-links">
+      <a href="#batch">Batch 01</a>
+      <a href="#board">Scoreboard</a>
+      <a href="#method">Method</a>
+      <a href="oodie.html">Teardown #1</a>
+      <a href="ashtray.html">Teardown #2</a>
+    </div>
+  </div>
+</nav>
+
+<header>
+  <div class="wrap">
+    <div class="eyebrow">Bangalore Sourcing Initiative · Batch 01 · Aug 2026</div>
+    <h1>Six products through the engine. Three builds, two tests, one skip.</h1>
+    <p class="lede">The engine finds what's winning in Western D2C, checks whether India wants it, prices what it lands at, and finds who to buy it from. <b>Batch 01 scanned Home &amp; Comfort.</b> Every price, link and photo below is from a live listing.</p>
+    <div class="ticker rv">
+      <div class="tick"><div class="v">6</div><div class="k">products scanned</div></div>
+      <div class="tick"><div class="v">3</div><div class="k">build verdicts</div></div>
+      <div class="tick"><div class="v">2</div><div class="k">test verdicts</div></div>
+      <div class="tick"><div class="v">1</div><div class="k">skip — and why</div></div>
+      <div class="tick"><div class="v">₹25–35K</div><div class="k">to act on this batch</div></div>
+    </div>
+  </div>
+</header>
+
+<!-- ============ BATCH ============ -->
+<section id="batch">
+  <div class="wrap">
+    <div class="sec-eyebrow">01 · The batch</div>
+    <h2>Home &amp; Comfort — scored and sourced</h2>
+    <p class="sec-sub">D = India demand · M = margin potential · O = ops simplicity, each out of 5. Verdicts follow the scores, not vibes.</p>
+
+    <div class="pgrid">
+      <!-- P1 wearable blanket (full width) -->
+      <article class="prod full rv">
+        <div class="pimg" data-name="Oversized Wearable Blanket">
+          <img loading="lazy" alt="The Oodie oversized wearable blanket" src="https://theoodie.com/cdn/shop/files/Social_Sharing_Image_Preview.png?v=1739850051">
+          <span class="chip build">BUILD NOW · IN MOTION</span><span class="pnum"># 01</span>
+        </div>
+        <div class="pbody">
+          <h3>Oversized wearable blanket</h3>
+          <div class="facts">
+            <div class="fact"><span class="k">West</span><span class="v"><b>The Oodie</b> — 8M+ originals sold; licensed collabs (Harry Potter, Pokémon) drive the line, from $95</span></div>
+            <div class="fact"><span class="k">India</span><span class="v">The Switchover (Ludhiana) retails ₹1,595–3,495 — proven band, thin on prints</span></div>
+            <div class="fact"><span class="k">Source</span><span class="v">China $4–10 FOB (MOQ 5–500) · India ready stock ₹650–1,950 · landed ₹650–950 either route</span></div>
+            <div class="fact"><span class="k">Scores</span><span class="v scores">D <b>4</b> · M <b>5</b> · O <b>5</b> — hero product; one-size, no electricals, both routes live</span></div>
+          </div>
+          <div class="pbtns">
+            <a class="btn btn-solid btn-sm" href="oodie.html">Full teardown — routes, math, vendors</a>
+            <a class="btn btn-ghost btn-sm ext" target="_blank" rel="noopener" href="https://theoodie.com/collections/oodies">The Oodie</a>
+            <a class="btn btn-ghost btn-sm ext" target="_blank" rel="noopener" href="https://theswitchover.com/collections/best-sellers">Switchover (India)</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- P2 weighted blanket -->
+      <article class="prod rv">
+        <div class="pimg" data-name="Weighted Blanket">
+          <img loading="lazy" alt="Bearaby knitted cotton weighted blanket" src="https://bearaby.com/cdn/shop/files/Cotton_Napper_2.png?v=1772120305">
+          <span class="chip next">BUILD NEXT</span><span class="pnum"># 02</span>
+        </div>
+        <div class="pbody">
+          <h3>Weighted blanket</h3>
+          <div class="facts">
+            <div class="fact"><span class="k">West</span><span class="v"><b>Gravity</b> from $99 (1,731 reviews, sleep-study backed) · <b>Bearaby</b> knitted $199–399, 2,964 reviews</span></div>
+            <div class="fact"><span class="k">India</span><span class="v">Market forming: Amazon's Choice ₹3,799 (50+/mo) · Mysa Sleep, SleepyCat entered · Doozie premium ₹13,770+</span></div>
+            <div class="fact"><span class="k">Source</span><span class="v">FOB ~$15–35 · YIXI Textile MOQ 50, 10–15 day lead, OEKO-TEX, ships DDP · TNE Nantong MOQ 300–500 (trial 100)</span></div>
+            <div class="fact"><span class="k">Scores</span><span class="v scores">D <b>4</b> · M <b>4</b> · O <b>3</b> — 5–9 kg per piece makes freight the cost to manage</span></div>
+          </div>
+          <div class="pbtns">
+            <a class="btn btn-ghost btn-sm ext" target="_blank" rel="noopener" href="https://bearaby.com/products/the-napper">Bearaby PDP</a>
+            <a class="btn btn-ghost btn-sm ext" target="_blank" rel="noopener" href="https://gravityblankets.com/products/gravity-blanket">Gravity PDP</a>
+            <a class="btn btn-ghost btn-sm ext" target="_blank" rel="noopener" href="https://www.amazon.in/Weighted-Blanket/s?k=Weighted+Blanket">Amazon.in check</a>
+            <a class="btn btn-ghost btn-sm ext" target="_blank" rel="noopener" href="https://www.yixitextile.com/custom-weighted-blanket-wholesale.html">Source · YIXI</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- P4 sleep mask -->
+      <article class="prod rv">
+        <div class="pimg" data-name="Weighted Sleep Mask">
+          <img loading="lazy" alt="Nodpod weighted sleep mask" src="https://nodpod.com/cdn/shop/products/Wisteria.jpg?v=1739677254">
+          <span class="chip test">TEST · WHITE SPACE</span><span class="pnum"># 03</span>
+        </div>
+        <div class="pbody">
+          <h3>Weighted sleep mask</h3>
+          <div class="facts">
+            <div class="fact"><span class="k">West</span><span class="v"><b>Nodpod</b> $38 — 4.5★ across 1,250 reviews, TikTok-viral; Bearaby just entered the category too</span></div>
+            <div class="fact"><span class="k">India</span><span class="v">Effectively no weighted-mask player — only plain sleep masks listed. True white space at a giftable price point</span></div>
+            <div class="fact"><span class="k">Source</span><span class="v">Alibaba MOQs 30–200 pcs (Yiwu Leiqier 13.8K sold, Suzhou Stitch MOQ 30) — FOB via RFQ; ~250 g, air-courier friendly</span></div>
+            <div class="fact"><span class="k">Scores</span><span class="v scores">D <b>3</b> · M <b>5</b> · O <b>5</b> — cheapest test in the batch; needs category education</span></div>
+          </div>
+          <div class="pbtns">
+            <a class="btn btn-ghost btn-sm ext" target="_blank" rel="noopener" href="https://nodpod.com/products/nodpod">Nodpod PDP</a>
+            <a class="btn btn-ghost btn-sm ext" target="_blank" rel="noopener" href="https://www.alibaba.com/trade/search?tab=all&amp;searchText=weighted+sleep+mask">Source · Alibaba</a>
+            <a class="btn btn-ghost btn-sm ext" target="_blank" rel="noopener" href="https://dir.indiamart.com/impcat/sleep-mask.html">India gap check</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- P3 heated throw -->
+      <article class="prod rv">
+        <div class="pimg noimg" data-name="Heated Throw · Wearable Heated Blanket">
+          <img alt="" src="">
+          <span class="chip test">TEST · COMPLIANCE GATE</span><span class="pnum"># 04</span>
+        </div>
+        <div class="pbody">
+          <h3>Heated throw / wearable heated blanket</h3>
+          <div class="facts">
+            <div class="fact"><span class="k">West</span><span class="v">Amazon's #1 electric-blanket bestseller (Bedsure) sells ~$27–36; <b>wearable heated hoodies now top the throw charts</b> — merges with our hero product</span></div>
+            <div class="fact"><span class="k">India</span><span class="v">Under-bed warmers established (Bell, Expressions Polar; Flipkart ₹4,000 doubles) — but plush heated <i>throws and wearables</i> are a visible gap</span></div>
+            <div class="fact"><span class="k">Source</span><span class="v">TNE Nantong builds electric blankets with CE/ETL-certified heating assemblies (contact on the teardown page)</span></div>
+            <div class="fact"><span class="k">Scores</span><span class="v scores">D <b>4</b> · M <b>4</b> · O <b>2</b> — electrical safety compliance (BIS/ISI) must be confirmed before any order</span></div>
+          </div>
+          <div class="pbtns">
+            <a class="btn btn-ghost btn-sm ext" target="_blank" rel="noopener" href="https://www.amazon.com/Best-Sellers-Electric-Throws/zgbs/home-garden/17874219011">West bestsellers</a>
+            <a class="btn btn-ghost btn-sm ext" target="_blank" rel="noopener" href="https://www.amazon.in/Electric-Blankets/b?ie=UTF8&node=1380453031">India today</a>
+            <a class="btn btn-ghost btn-sm ext" target="_blank" rel="noopener" href="https://www.blanket-manufacturer.com/electric-blanket/">Source · TNE</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- P6 ashtray -->
+      <article class="prod rv">
+        <div class="pimg noimg" data-name="Disposable Gel Ashtray">
+          <img alt="" src="">
+          <span class="chip build">BUILD · HORECA FIRST</span><span class="pnum"># 06</span>
+        </div>
+        <div class="pbody">
+          <h3>Disposable gel ashtray</h3>
+          <div class="facts">
+            <div class="fact"><span class="k">West</span><span class="v">Retails as multipacks — 25-piece gel packs at <b>$9.99–11.35</b>; water-activated granules, self-extinguishing, odour-trapping</span></div>
+            <div class="fact"><span class="k">India</span><span class="v">Already made here. A Badlapur supplier lists the finished gel ashtray at <b>₹8/pc</b>; a Pune reseller lists the same category at ₹75. No offline brand owns it</span></div>
+            <div class="fact"><span class="k">Source</span><span class="v"><b>Domestic only.</b> Buy at ₹8 (₹10.70 delivered, branded) or make it here for an estimated ₹4–7. Importing lands at ₹42 — off the table</span></div>
+            <div class="fact"><span class="k">Scores</span><span class="v scores">D <b>3</b> · M <b>5</b> · O <b>5</b> — a reordering consumable, sold direct to restaurants and hotels; under ₹45K to prove</span></div>
+          </div>
+          <div class="pbtns">
+            <a class="btn btn-solid btn-sm" href="ashtray.html">Full teardown — freight, math, vendors</a>
+            <a class="btn btn-ghost btn-sm ext" target="_blank" rel="noopener" href="https://www.amazon.in/ashtray-portable/s?k=ashtray+portable">India shelf</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- P5 sunset lamp -->
+      <article class="prod rv">
+        <div class="pimg noimg" data-name="Sunset Projection Lamp">
+          <img alt="" src="">
+          <span class="chip skip">SKIP — HERE'S WHY</span><span class="pnum"># 05</span>
+        </div>
+        <div class="pbody">
+          <h3>Sunset projection lamp</h3>
+          <div class="facts">
+            <div class="fact"><span class="k">West</span><span class="v">Still moving volume on Amazon US (10K+/mo listings exist) — the trend signal is real</span></div>
+            <div class="fact"><span class="k">India</span><span class="v">Already crashed: Amazon's Choice at <b>₹277–299</b> (86% off MRP), 2K+/mo buyers — fully commoditised, race to the bottom</span></div>
+            <div class="fact"><span class="k">Source</span><span class="v">Trivially sourceable — which is exactly the problem: zero moat, electronics returns, no brand story</span></div>
+            <div class="fact"><span class="k">Scores</span><span class="v scores">D <b>4</b> · M <b>1</b> · O <b>2</b> — demand without margin is a trap. The engine passes</span></div>
+          </div>
+          <div class="pbtns">
+            <a class="btn btn-ghost btn-sm ext" target="_blank" rel="noopener" href="https://www.amazon.in/sunset-lamp-projector/s?k=sunset+lamp+projector">See the ₹299 shelf</a>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SCOREBOARD ============ -->
+<section id="board">
+  <div class="wrap">
+    <div class="sec-eyebrow">02 · Scoreboard</div>
+    <h2>The batch at a glance</h2>
+    <table class="cmp rv" style="margin-top:24px">
+      <thead><tr><th>Product</th><th>West price</th><th>India price today</th><th>Factory / wholesale</th><th>D·M·O</th><th>Verdict</th></tr></thead>
+      <tbody>
+        <tr><td>Wearable blanket</td><td class="mono">$95+</td><td class="mono">₹1,595–3,495</td><td class="mono">$4–10 FOB · ₹650 India</td><td class="mono">4·5·5</td><td><span class="chip build">BUILD NOW</span></td></tr>
+        <tr><td>Weighted blanket</td><td class="mono">$99–399</td><td class="mono">₹3,799–13,770</td><td class="mono">~$15–35 FOB · MOQ 50</td><td class="mono">4·4·3</td><td><span class="chip next">BUILD NEXT</span></td></tr>
+        <tr><td>Weighted sleep mask</td><td class="mono">$38</td><td class="mono">— (white space)</td><td class="mono">RFQ · MOQ 30–200</td><td class="mono">3·5·5</td><td><span class="chip test">TEST</span></td></tr>
+        <tr><td>Heated throw / wearable</td><td class="mono">$27–36</td><td class="mono">₹4,000 (under-bed only)</td><td class="mono">TNE · CE/ETL lines</td><td class="mono">4·4·2</td><td><span class="chip test">TEST</span></td></tr>
+        <tr><td>Disposable gel ashtray</td><td class="mono">$0.24–0.45/pc</td><td class="mono">₹8 wholesale · ₹75 resale</td><td class="mono">domestic ₹8 · make ₹4–7</td><td class="mono">3·5·5</td><td><span class="chip build">BUILD</span></td></tr>
+        <tr><td>Sunset lamp</td><td class="mono">$15–25</td><td class="mono">₹277–299</td><td class="mono">commodity</td><td class="mono">4·1·2</td><td><span class="chip skip">SKIP</span></td></tr>
+      </tbody>
+    </table>
+    <p class="note" style="margin-top:12px">The thread across the comfort line: <b>weighted / warm / soft, one-size logistics</b> — one supplier base (already contacted for #1) covers most of it. The ashtray sits outside that thread on purpose: it is the <b>B2B cash-flow product</b>, tiny to enter and quick to reorder.</p>
+  </div>
+</section>
+
+<!-- ============ METHOD ============ -->
+<section id="method">
+  <div class="wrap">
+    <div class="sec-eyebrow">03 · How the engine works</div>
+    <h2>Same five stages, every batch</h2>
+    <div class="stages rv">
+      <div class="stage"><div class="n">S1</div><div class="t">Spot</div><div class="d">Bestseller lists, review volumes, and trend signals in US / AU / EU D2C.</div></div>
+      <div class="stage"><div class="n">S2</div><div class="t">Validate</div><div class="d">Who sells it in India, at what price, with what traction.</div></div>
+      <div class="stage"><div class="n">S3</div><div class="t">Score</div><div class="d">Demand · Margin · Ops, each 1–5. Verdict from the scores.</div></div>
+      <div class="stage"><div class="n">S4</div><div class="t">Source</div><div class="d">FOB vs domestic wholesale, MOQs, landed cost to Bangalore.</div></div>
+      <div class="stage"><div class="n">S5</div><div class="t">Activate</div><div class="d">Named vendors with contacts. See Teardown №1 for the full depth.</div></div>
+    </div>
+    <div class="two">
+      <div class="slip rv">
+        <h3>What a verdict means</h3>
+        <ul>
+          <li><b>Build now</b> — sourcing activated, market test funded from batch budget.</li>
+          <li><b>Build next</b> — enters sampling as soon as №1's test reads positive.</li>
+          <li><b>Test</b> — small sample order only; a gate (demand proof or compliance) must clear first.</li>
+          <li><b>Skip</b> — demand without margin, or margin without a moat. Documented so we don't re-litigate it.</li>
+        </ul>
+      </div>
+      <div class="slip rv">
+        <h3>Coming in Batch 02</h3>
+        <ul>
+          <li>Chosen category scan (Fitness &amp; Wellness or Kitchen &amp; Gadgets — boss's pick).</li>
+          <li>Deeper vendor sheets for every Build/Test verdict from Batch 01.</li>
+          <li>Optionally: the live version of this engine — a tool that runs this scan on demand.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="decide rv">
+      <h2>Decisions we need</h2>
+      <ol>
+        <li><span class="n">01</span><span>Approve Batch 01 actions: continue №1 (already in motion), sample №2 and №3 alongside it (₹25–35K covers all sampling).</span></li>
+        <li><span class="n">02</span><span>Confirm the compliance check budget for №4 (heated wearable) — BIS/ISI applicability before any electrical order.</span></li>
+        <li><span class="n">03</span><span>Approve the gel-ashtray quotes budget (₹3–5K), domestic-only sourcing and HORECA-first positioning — see Teardown #2.</span></li>
+        <li><span class="n">04</span><span>Pick Batch 02's category so the next scan starts this week.</span></li>
+      </ol>
+      <span class="muted">The Sourcing Engine · Batch 01 · prepared by Arfa · August 2026</span>
+    </div>
+    <div class="credit">Data from live listings on theoodie.com, theswitchover.com, bearaby.com, gravityblankets.com, nodpod.com, Amazon (US &amp; IN), Flipkart, Alibaba, Made-in-China and IndiaMART — August 2026. Product photos belong to the linked brands; shown for internal research. FX ₹95/USD; duty figures indicative.</div>
+  </div>
+</footer>
+
+<script>
+document.querySelectorAll('.pimg img').forEach(function(im){
+  im.addEventListener('error', function(){ im.closest('.pimg').classList.add('noimg'); });
+  if (im.getAttribute('src')==='') im.closest('.pimg').classList.add('noimg');
+});
+(function(){
+  if (!('IntersectionObserver' in window)) { document.querySelectorAll('.rv').forEach(function(el){ el.classList.add('in'); }); return; }
+  var io = new IntersectionObserver(function(es){
+    es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, {threshold:.08});
+  document.querySelectorAll('.rv').forEach(function(el){ io.observe(el); });
+})();
+</script>
+</body>
+</html>
